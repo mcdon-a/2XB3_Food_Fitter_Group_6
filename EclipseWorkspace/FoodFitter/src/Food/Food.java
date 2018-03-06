@@ -51,7 +51,7 @@ public class Food {
 			if (i < this.nutrVals.length - 1)
 				nutrVals += ", ";
 		}
-		return "{ (Food id: "+ this.id + "), (Descriptor: " + descriptor + "),(Nutritional Values: " + nutrVals + ")}";
+		return "{(Food id: "+ this.id + "), (Descriptor: " + descriptor + "),(Nutritional Values: " + nutrVals + ")}";
 	}
 	
 	//Temporary main to test code
