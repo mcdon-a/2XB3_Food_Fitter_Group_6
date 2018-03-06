@@ -10,7 +10,7 @@ class MainMenu extends Component{
     }
     async _fetchDataAsync() {
         try {
-          let response = await fetch('http://localhost:8000/jsonFile.json');
+          let response = await fetch('http://172.17.118.127:8000/jsonFile.json');
           let responseJson = await response.json();
           this.setState({fulltext: JSON.stringify(responseJson)});
         } catch(error) {
