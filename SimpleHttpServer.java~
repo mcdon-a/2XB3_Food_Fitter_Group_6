@@ -22,7 +22,6 @@ public class SimpleHttpServer {
     HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
     server.createContext("/info", new InfoHandler());
     server.createContext("/get", new GetHandler());
-    server.createContext("/jsonFile.json", new JSONHandler());
     server.setExecutor(null); // creates a default executor
     server.start();
   }
@@ -36,18 +35,7 @@ public class SimpleHttpServer {
       os.close();
     }
   }
-  
-  static class JSONHandler implements HttpHandler{
-    public void handle(HttpExchange t) throws IOException {
-      String json = "{\"agent 1\":{\"port\":\"12345\",\"ip\":\"192.67.4.1\",\"neighbours\":{\"agent 2\":{\"port\":\"12345\",\"ip\":\"192.67.4.2\"}},\"measurements\":{\"agent 3\":{\"port\":\"12346\",\"ip\":\"192.67.4.1\"},\"power\":\"7KW\",\"voltage\":\"4.2V\"}}}";
-                String response = json.toString();
-                t.sendResponseHeaders(200, response.length());
-                OutputStream os = t.getResponseBody();
-                os.write(response.getBytes());
-                os.close();
-    }
-  }
-  
+
   static class GetHandler implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
 
