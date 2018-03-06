@@ -15,7 +15,7 @@ import java.util.Map;
  * public Food[] getFood(String tag)			returns a list of foods based on the word that is searched
  * 
  * 
- * @author tobya
+ * @author Thomas Armena
  *
  */
 
@@ -90,15 +90,10 @@ public class PrefixTree {
 		return t;
 	}
 	
-	public Food[] getFood(String tag) {
-		Node t = searchNode(tag);
-				
-		if (searchNode(tag).getFoods() != null) {
-			return searchNode(tag).getFoods();
-		} else {
-			return null;
-		}
-		
+	public Food[] getFood(String tag) {		
+		if (searchNode(tag)!= null) return searchNode(tag).getFoods();
+		System.out.println("Nothing found.");
+		return this.root.getFoods();
 	}
 	
 	public static void main(String[] args) {
@@ -128,7 +123,7 @@ public class PrefixTree {
 				
 				//SEARCH FOR NODES BY ENTERING STRING INSIDE THE CALL TO getFood BELOW
 				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				Food[] foods = Tree.getFood("plain");
+				Food[] foods = Tree.getFood("nuqd");   
 				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				
 				for(int i = 0; i < foods.length;i ++) {
