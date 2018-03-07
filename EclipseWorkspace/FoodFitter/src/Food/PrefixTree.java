@@ -96,6 +96,8 @@ public class PrefixTree {
 		return this.root.getFoods();
 	}
 	
+	public static void 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Creating a test food item
@@ -121,6 +123,7 @@ public class PrefixTree {
 				Tree.insertFood(food5);
 				Tree.insertFood(food6);
 				
+				/*
 				//SEARCH FOR NODES BY ENTERING STRING INSIDE THE CALL TO getFood BELOW
 				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				Food[] foods = Tree.getFood("nuqd");   
@@ -128,6 +131,22 @@ public class PrefixTree {
 				
 				for(int i = 0; i < foods.length;i ++) {
 					System.out.println(foods[i]);
+				}
+				*/
+				
+				//Multiple tags test
+				PrefixTree Tree2 = new PrefixTree();
+				//*********************************
+				Food[] foods1 = Tree.getFood("Fr");   //First tag
+				//*********************************
+				for(int i = 0; i < foods1.length; i ++){
+					Tree2.insertFood(foods1[i]);
+				}
+				//*********************************
+				Food[] foods2 = Tree2.getFood("pl");  //Second tag
+				//*********************************
+				for(int i = 0; i < foods2.length;i ++) {
+					System.out.println(foods2[i]);
 				}
 	}
 }
