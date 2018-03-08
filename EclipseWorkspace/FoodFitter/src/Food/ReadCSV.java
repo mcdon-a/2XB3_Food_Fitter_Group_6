@@ -56,7 +56,7 @@ public class ReadCSV {
 	 */
 	public static Food[] readFile() {
 		String foodNamePath = "data\\Food Name.csv";
-		Food[] foods = new Food [1626];
+		Food[] foods = new Food [5690];
 		String[] nutrients = new String [TOTAL_NUTRIENT_AMOUNTS];
 		
 		try{
@@ -71,8 +71,9 @@ public class ReadCSV {
 				  String[] ingredients = ingredientsToTags(line);
 				  
 				  if (i == foods.length) {
-					  //foods = resize(foods, i*2);
-					  break;
+					  foods = resize(foods, i*2);
+					  //System.out.println(foods.length);
+					  //break;
 				  }
 				  
 				  foods[i] = new Food(i, ingredients, new double[] {1.1,2.2});
@@ -94,7 +95,7 @@ public class ReadCSV {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(readFile()[1600].toString());
+		System.out.println(readFile()[5689].toString());
 	}
 
 }
