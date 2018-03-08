@@ -18,9 +18,9 @@ public class Food {
 	private final double[] nutrVals;			//stores an array of nutritional values in respective order
 	
 	//constructor
-	public Food(int id, String descriptor, double[] nutrVals) {
+	public Food(int id, String[] descriptor, double[] nutrVals) {
 		this.id = id;
-		this.descriptor = descriptor.split(", ");
+		this.descriptor = descriptor;
 		this.nutrVals = nutrVals;
 	}
 	
@@ -58,7 +58,7 @@ public class Food {
 	public static void main(String[] args) {
 		//Creating a test food item
 		int id = 400078381;
-		String descriptor = "Fast foods, sandwiches and burgers, hamburger, regular, single patty, plain";
+		String[] descriptor = {"Fast foods", "sandwiches and burgers", "hamburger", "regular", "single patty", "plain"};
 		double[] nutrVals = {1,2,3,4,5,6,7,8};
 		Food food1 = new Food(id,descriptor,nutrVals);
 		

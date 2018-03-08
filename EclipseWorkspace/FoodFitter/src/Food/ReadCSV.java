@@ -75,7 +75,7 @@ public class ReadCSV {
 					  break;
 				  }
 				  
-				  foods[i] = new Food(i, Arrays.toString(ingredients), new double[] {1.1,2.2});
+				  foods[i] = new Food(i, ingredients, new double[] {1.1,2.2});
 				  
 				  /*if (id != i) {
 					  System.out.println("The location ID and stored ID of the food item are mismatched.");
@@ -89,7 +89,7 @@ public class ReadCSV {
 		}
 		catch (IOException e) {
 			System.out.println("Problem reading file.");
-			return new Food[] {new Food (-1, "Bad", new double[] {1})};
+			return new Food[] {new Food (-1, new String[] {"Bad"}, new double[] {1})};
 		}
 	}
 	
