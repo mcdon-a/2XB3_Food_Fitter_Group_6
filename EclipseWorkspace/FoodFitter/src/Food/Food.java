@@ -67,4 +67,9 @@ public class Food {
 		System.out.println(food1.getDescriptor()[1]);
 	}
 
+	public int getCal() {
+		// TODO IMPLEMENT CALORIE RETRIEVAL
+		return 0;
+	}
+
 }
