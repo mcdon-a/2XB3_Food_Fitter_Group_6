@@ -53,7 +53,7 @@ public class SimpleHttpServer {
 
       // add the required response header for a PDF file
       Headers h = t.getResponseHeaders();
-      h.add("Content-Type", "application/txt");
+      h.add("Content-Type", "application/json");
 
       // a PDF (you provide your own!)
       File file = new File ("1-rec-and-ind5.pdf");
