@@ -15,7 +15,7 @@ import java.util.Map;
  * public Food[] getFood(String tag)			returns a list of foods based on the word that is searched
  * 
  * 
- * @author tobya
+ * @author Thomas Armena
  *
  */
 
@@ -90,33 +90,30 @@ public class PrefixTree {
 		return t;
 	}
 	
-	public Food[] getFood(String tag) {
-		Node t = searchNode(tag);
-				
-		if (searchNode(tag).getFoods() != null) {
-			return searchNode(tag).getFoods();
-		} else {
-			return null;
-		}
-		
+	public Food[] getFood(String tag) {		
+		if (searchNode(tag)!= null) return searchNode(tag).getFoods();
+		System.out.println("Nothing found.");
+		return this.root.getFoods();
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Creating a test food item
-				String descriptor1 = "Fast foods, sandwiches and burgers, hamburger, regular, single patty, plain";
-				String descriptor2 = "Fast foods, sandwiches and burgers, hamburger, regular, single patty, plain";
-				String descriptor3 = "Fast foods, Fries, plain";
-				String descriptor4 = "Fast foods, Fried onions";
-				String descriptor5 = "Fast foods, Salad";
-				String descriptor6 = "Fast foods, nuts";
-				double[] nutrVals = {1,2,3,4,5,6,7,8};
-				Food food1 = new Food(1,descriptor1,nutrVals);
-				Food food2 = new Food(2,descriptor2,nutrVals);
-				Food food3 = new Food(3,descriptor3,nutrVals);
-				Food food4 = new Food(4,descriptor4,nutrVals);
-				Food food5 = new Food(5,descriptor5,nutrVals);
-				Food food6 = new Food(6,descriptor6,nutrVals);
+				String[] descriptor1 = {"sandwich", "peanut butter", "strawberry jelly" };
+				String[] descriptor2 = {"sandwich", "peanut butter", "grape jelly" };
+				String[] descriptor3 = {"sandwich", "tuna"};
+				String[] descriptor4 = {"fries", "plain"};
+				String[] descriptor5 = {"fried fish", "soy sauce" };
+				String[] descriptor6 = {"sardines", "fried" };
+				
+				Food food1 = new Food(descriptor1);
+				Food food2 = new Food(descriptor2);
+				Food food3 = new Food(descriptor3);
+				Food food4 = new Food(descriptor4);
+				Food food5 = new Food(descriptor5);
+				Food food6 = new Food(descriptor6);
 				
 				PrefixTree Tree = new PrefixTree();
 				Tree.insertFood(food1);
@@ -126,13 +123,30 @@ public class PrefixTree {
 				Tree.insertFood(food5);
 				Tree.insertFood(food6);
 				
+				/*
 				//SEARCH FOR NODES BY ENTERING STRING INSIDE THE CALL TO getFood BELOW
 				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				Food[] foods = Tree.getFood("plain");
+				Food[] foods = Tree.getFood("nuqd");   
 				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				
 				for(int i = 0; i < foods.length;i ++) {
 					System.out.println(foods[i]);
+				}
+				*/
+				
+				//Multiple tags test
+				PrefixTree Tree2 = new PrefixTree();
+				//*********************************
+				Food[] foods1 = Tree.getFood("sandwich");   //First tag
+				//*********************************
+				for(int i = 0; i < foods1.length; i ++){
+					Tree2.insertFood(foods1[i]);
+				}
+				//*********************************
+				Food[] foods2 = Tree2.getFood("grape");  //Second tag
+				//*********************************
+				for(int i = 0; i < foods2.length;i ++) {
+					System.out.println(foods2[i]);
 				}
 	}
 }

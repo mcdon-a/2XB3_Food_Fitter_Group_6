@@ -5,7 +5,7 @@ for i in xrange(5000):
     item = ("Cereal"+str(i),int(random()*500)+50)
     foods.append(item)
 
-foods.sort()
+#foods.sort()
 
 MAX_CAL = 2000
 MAX_ITEMS = 5

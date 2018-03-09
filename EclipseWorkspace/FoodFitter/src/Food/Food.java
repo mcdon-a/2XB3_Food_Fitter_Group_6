@@ -1,5 +1,7 @@
 package Food;
 
+import java.util.HashMap;
+
 /**
  * The Food class is an ADT that represents a food item by its id, descriptor, and nutritional values.
  * It accepts 3 arguments; the id (int), the descriptor (String of tags separated by commas), 
@@ -13,28 +15,25 @@ package Food;
 
 public class Food {
 	
-	private final int id;						//stores the food ID
 	private final String[] descriptor;			//stores an array of tags that describe the food
-	private final double[] nutrVals;			//stores an array of nutritional values in respective order
+	private HashMap<Integer, Double> nutrVals;			//stores an array of nutritional values in respective order
 	
 	//constructor
-	public Food(int id, String descriptor, double[] nutrVals) {
-		this.id = id;
-		this.descriptor = descriptor.split(", ");
-		this.nutrVals = nutrVals;
-	}
-	
-	//GETTER methods
-	public int getID() {
-		return this.id;
+	public Food(String[] descriptor) {
+		this.descriptor = descriptor;
+		nutrVals = new HashMap<>();
 	}
 	
 	public String[] getDescriptor() {
 		return this.descriptor;
 	}
 	
-	public double[] nutrVals() {
-		return this.nutrVals;
+	public void addNutr(int nutrID, double val){
+		nutrVals.put(nutrID,val);
+	}
+	
+	public double getNutr(int nutrID){
+		return nutrVals.get(nutrID);
 	}
 	
 	//String representation 
@@ -45,26 +44,28 @@ public class Food {
 			if (i < this.descriptor.length-1)
 				descriptor += ", ";
 		}
-		String nutrVals = "";
-		for(int i = 0; i < this.nutrVals.length; i++) {
-			nutrVals += Double.toString(this.nutrVals[i]);
-			if (i < this.nutrVals.length - 1)
-				nutrVals += ", ";
-		}
-		return "{(Food id: "+ this.id + "), (Descriptor: " + descriptor + "),(Nutritional Values: " + nutrVals + ")}";
+		
+		return "{(Descriptor: " + descriptor + ")";
 	}
 	
 	//Temporary main to test code
 	public static void main(String[] args) {
-		//Creating a test food item
-		int id = 400078381;
-		String descriptor = "Fast foods, sandwiches and burgers, hamburger, regular, single patty, plain";
-		double[] nutrVals = {1,2,3,4,5,6,7,8};
-		Food food1 = new Food(id,descriptor,nutrVals);
+		
+		String[] descriptor = {"Fast foods", "sandwiches and burgers", "hamburger", "regular", "single patty", "plain"};
+		Food food1 = new Food(descriptor);
+		food1.addNutr(203, 19998);
+		food1.addNutr(408, 8);
 		
 		//Testing the outputs
 		System.out.println(food1);
 		System.out.println(food1.getDescriptor()[1]);
+		System.out.println(food1.getNutr(203));
+		System.out.println(food1.getNutr(408));
+	}
+
+	public int getCal() {
+		// TODO IMPLEMENT CALORIE RETRIEVAL
+		return 0;
 	}
 
 }
