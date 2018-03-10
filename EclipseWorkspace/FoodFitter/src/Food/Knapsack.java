@@ -13,13 +13,13 @@ public class Knapsack {
 				mx = x.getCal();
 		return mx;
 	}
-	
+
 	public Knapsack(ArrayList<Food> foods) {
 		MAX_CAL = max_cal(foods);
 		buckets = new ArrayList<ArrayList<Meal>>(MAX_CAL+1);
 		fill_buckets(foods);
 	}
-	
+
 	public void fill_buckets(ArrayList<Food> foods) {
 		// Insert single foods
 		for (Food food: foods) {
@@ -42,7 +42,7 @@ public class Knapsack {
 			}
 		}
 	}
-	
-	
-	
+
+
+
 }
