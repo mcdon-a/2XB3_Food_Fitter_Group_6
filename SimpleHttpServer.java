@@ -7,6 +7,7 @@
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -22,11 +23,24 @@ public class SimpleHttpServer {
     HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
     server.createContext("/info", new InfoHandler());
     server.createContext("/get", new GetHandler());
+    server.createContext("/posthandler", new postHandler());
     server.createContext("/jsonFile.json", new JSONHandler());
     server.setExecutor(null); // creates a default executor
     server.start();
   }
-
+  
+  static class postHandler implements HttpHandler {
+    public void handle(HttpExchange t) throws IOException {
+      InputStream input = t.getRequestBody();
+      Headers requestHeaders = t.getRequestHeaders();
+      int contentLength = Integer.parseInt(requestHeaders.getFirst("Content-length"));
+      byte[] data = new byte[contentLength];
+      int length = input.read(data);
+      OutputStream os = t.getResponseBody();
+      os.write(data);
+      os.close();
+    }
+  }
   static class InfoHandler implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
       String response = "Use /get to download a file";

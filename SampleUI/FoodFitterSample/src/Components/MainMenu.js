@@ -6,11 +6,32 @@ class MainMenu extends Component{
     state = { list: null, text: 'Enter Food', fulltext: null }
 
     componentWillMount(){
-        this._fetchDataAsync();
+        this._promptDataAsync();
+        //this._fetchDataAsync();
+    }
+    async _promptDataAsync(){
+        try{
+            let sendData = fetch('http://172.17.39.218:8000/posthandler', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  name: 'Alexie',
+                  age: '19',
+                }),
+            });
+            let response = await fetch('http://172.17.39.218:8000/posthandler');
+            let reponseJson = await response.json();
+            this.setState({ fulltext: JSON.stringify(responseJson)});
+
+        } catch(error){
+            console.log(error);
+        }
     }
     async _fetchDataAsync() {
         try {
-          let response = await fetch('http://172.17.118.127:8000/jsonFile.json');
+          let response = await fetch('http://172.17.39.218:8000/jsonFile.json');
           let responseJson = await response.json();
           this.setState({fulltext: JSON.stringify(responseJson)});
         } catch(error) {
