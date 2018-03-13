@@ -1,7 +1,7 @@
 package Food;
 import java.util.ArrayList;
 
-public class Wrapper {
+public class Startup {
 
     private static ArrayList<Food> foods;
 
