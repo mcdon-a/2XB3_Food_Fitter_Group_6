@@ -43,8 +43,9 @@ public class PrefixTree {
 	
 	private Node root;
 	
-	public PrefixTree () {
+	public PrefixTree (ArrayList<Food> foods) {
 		root = new Node();
+		this.load(foods);
 	}
 	
 
@@ -99,6 +100,10 @@ public class PrefixTree {
 		if (searchNode(tag)!= null) return searchNode(tag).getFoods();
 		System.out.println("Nothing found.");
 		return this.root.getFoods();
+	}
+	
+	private void load(ArrayList<Food> foods) {
+		for(int i = 0; i < foods.size();i++) this.insertFood(foods.get(i));
 	}
 	
 	private String simplifyString(String str) {
