@@ -49,6 +49,8 @@ public class PrefixTree {
 	
 
 	public void insertTag(Food food,String tag) {
+		
+		tag = simplifyString(tag);
 		HashMap<Character, Node> children = this.root.children;
 
 		for(int  i=0; i < tag.length(); i++) {
@@ -69,6 +71,7 @@ public class PrefixTree {
 	}
 	
 	
+	
 	public void insertFood(Food food) {
 		for(int i = 0; i < food.getDescriptor().length;i++) {
 			insertTag(food,food.getDescriptor()[i]);
@@ -76,6 +79,8 @@ public class PrefixTree {
 	}
 	
 	private Node searchNode(String str) {
+		str = simplifyString(str);
+		str = str.replaceAll(" ", "");
 		Map<Character, Node> children = root.children;
 		Node t = null;
 		for(int i=0; i <str.length();i++) {
@@ -96,57 +101,68 @@ public class PrefixTree {
 		return this.root.getFoods();
 	}
 	
-	
+	private String simplifyString(String str) {
+		str = str.toLowerCase();
+		str = str.replaceAll(" ", "");
+		if (str.charAt(str.length()-1) == 's') str = str.substring(0, str.length() - 1);
+		return str;
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Creating a test food item
-				String[] descriptor1 = {"sandwich", "peanut butter", "strawberry jelly" };
-				String[] descriptor2 = {"sandwich", "peanut butter", "grape jelly" };
-				String[] descriptor3 = {"sandwich", "tuna"};
-				String[] descriptor4 = {"fries", "plain"};
-				String[] descriptor5 = {"fried fish", "soy sauce" };
-				String[] descriptor6 = {"sardines", "fried" };
-				
-				Food food1 = new Food(descriptor1);
-				Food food2 = new Food(descriptor2);
-				Food food3 = new Food(descriptor3);
-				Food food4 = new Food(descriptor4);
-				Food food5 = new Food(descriptor5);
-				Food food6 = new Food(descriptor6);
-				
-				PrefixTree Tree = new PrefixTree();
-				Tree.insertFood(food1);
-				Tree.insertFood(food2);
-				Tree.insertFood(food3);
-				Tree.insertFood(food4);
-				Tree.insertFood(food5);
-				Tree.insertFood(food6);
-				
-				/*
-				//SEARCH FOR NODES BY ENTERING STRING INSIDE THE CALL TO getFood BELOW
-				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				Food[] foods = Tree.getFood("nuqd");   
-				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				
-				for(int i = 0; i < foods.length;i ++) {
-					System.out.println(foods[i]);
-				}
-				*/
-				
-				//Multiple tags test
-				PrefixTree Tree2 = new PrefixTree();
-				//*********************************
-				Food[] foods1 = Tree.getFood("sandwich");   //First tag
-				//*********************************
-				for(int i = 0; i < foods1.length; i ++){
-					Tree2.insertFood(foods1[i]);
-				}
-				//*********************************
-				Food[] foods2 = Tree2.getFood("grape");  //Second tag
-				//*********************************
-				for(int i = 0; i < foods2.length;i ++) {
-					System.out.println(foods2[i]);
-				}
+		/*
+		String[] descriptor1 = {"sandwich", "peanut butter", "strawberry jelly" };
+		String[] descriptor2 = {"sandwich", "peanut butter", "grape jelly" };
+		String[] descriptor3 = {"sandwich", "tuna"};
+		String[] descriptor4 = {"fries", "plain"};
+		String[] descriptor5 = {"fried fish", "soy sauce" };
+		String[] descriptor6 = {"sardines", "fried" };
+		
+		Food food1 = new Food(descriptor1);
+		Food food2 = new Food(descriptor2);
+		Food food3 = new Food(descriptor3);
+		Food food4 = new Food(descriptor4);
+		Food food5 = new Food(descriptor5);
+		Food food6 = new Food(descriptor6);
+		
+		PrefixTree Tree = new PrefixTree();
+		Tree.insertFood(food1);
+		Tree.insertFood(food2);
+		Tree.insertFood(food3);
+		Tree.insertFood(food4);
+		Tree.insertFood(food5);
+		Tree.insertFood(food6);
+		
+		/*
+		//SEARCH FOR NODES BY ENTERING STRING INSIDE THE CALL TO getFood BELOW
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Food[] foods = Tree.getFood("nuqd");   
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+		for(int i = 0; i < foods.length;i ++) {
+			System.out.println(foods[i]);
+		}
+		
+		
+		//Multiple tags test
+		PrefixTree Tree2 = new PrefixTree();
+		//*********************************
+		Food[] foods1 = Tree.getFood("sandwich");   //First tag
+		//*********************************
+		for(int i = 0; i < foods1.length; i ++){
+			Tree2.insertFood(foods1[i]);
+		}
+		//*********************************
+		Food[] foods2 = Tree2.getFood("grape");  //Second tag
+		//*********************************
+		for(int i = 0; i < foods2.length;i ++) {
+			System.out.println(foods2[i]);
+		}
+		*/
+		//PrefixTree Tree = new PrefixTree();
+		
+		//for(int i = 0)
+		
 	}
 }

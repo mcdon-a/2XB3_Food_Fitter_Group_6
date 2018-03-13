@@ -131,7 +131,7 @@ public class ReadCSV {
 
 	public static void main(String[] args) {
 		readFile();
-		//System.out.println(readFile().get(5689).toString());
+		System.out.println(readFile().get(5689).toString());
 		//System.out.println(readFile().get(2000).getNutr(306));
 	}
 

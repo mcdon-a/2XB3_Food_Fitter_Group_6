@@ -45,7 +45,7 @@ public class Food {
 				descriptor += ", ";
 		}
 		
-		return "{(Descriptor: " + descriptor + ")";
+		return "(" + descriptor + ")";
 	}
 	
 	//Temporary main to test code
