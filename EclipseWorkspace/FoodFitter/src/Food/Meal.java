@@ -34,5 +34,8 @@ public class Meal {
 	public Food get(int index) {
 		return foods.get(index);
 	}
-	
+	// Get foods
+	public ArrayList<Food> getFoods(){
+		return foods;
+	}
 }

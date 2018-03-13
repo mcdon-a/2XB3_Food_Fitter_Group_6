@@ -65,7 +65,13 @@ public class Food {
 
 	public int getCal() {
 		// TODO IMPLEMENT CALORIE RETRIEVAL
-		return 0;
+		final int CALORIE_ID = 208;
+		try {
+			return (int)getNutr(CALORIE_ID);
+		}catch (Exception e){
+			//System.out.println("Gosh darn");
+			return 0;
+		}
 	}
 
 }
