@@ -297,3 +297,59 @@
 15-Mar-2018 11:04:11.764 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
 15-Mar-2018 11:04:11.767 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
 15-Mar-2018 11:04:11.768 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+15-Mar-2018 11:38:59.965 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.6
+15-Mar-2018 11:38:59.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 09:34:35 UTC
+15-Mar-2018 11:38:59.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.6.0
+15-Mar-2018 11:38:59.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Mar-2018 11:38:59.970 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.12.6
+15-Mar-2018 11:38:59.971 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+15-Mar-2018 11:38:59.971 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre
+15-Mar-2018 11:38:59.971 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+15-Mar-2018 11:38:59.971 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Mar-2018 11:38:59.971 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+15-Mar-2018 11:38:59.972 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+15-Mar-2018 11:38:59.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/conf/logging.properties
+15-Mar-2018 11:38:59.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Mar-2018 11:38:59.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-Mar-2018 11:38:59.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Mar-2018 11:38:59.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+15-Mar-2018 11:38:59.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+15-Mar-2018 11:38:59.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+15-Mar-2018 11:38:59.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/temp
+15-Mar-2018 11:38:59.974 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Sophia/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Mar-2018 11:39:00.183 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+15-Mar-2018 11:39:00.209 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+15-Mar-2018 11:39:00.223 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+15-Mar-2018 11:39:00.225 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+15-Mar-2018 11:39:00.226 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1039 ms
+15-Mar-2018 11:39:00.273 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Mar-2018 11:39:00.274 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.6
+15-Mar-2018 11:39:00.289 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs]
+15-Mar-2018 11:39:00.792 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs] has finished in [502] ms
+15-Mar-2018 11:39:00.792 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples]
+15-Mar-2018 11:39:01.207 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples] has finished in [414] ms
+15-Mar-2018 11:39:01.207 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello]
+15-Mar-2018 11:39:01.242 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello] has finished in [35] ms
+15-Mar-2018 11:39:01.243 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager]
+15-Mar-2018 11:39:01.278 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager] has finished in [35] ms
+15-Mar-2018 11:39:01.279 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager]
+15-Mar-2018 11:39:01.303 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager] has finished in [24] ms
+15-Mar-2018 11:39:01.303 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT]
+15-Mar-2018 11:39:01.327 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT] has finished in [24] ms
+15-Mar-2018 11:39:01.332 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+15-Mar-2018 11:39:01.345 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+15-Mar-2018 11:39:01.348 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1122 ms
+15-Mar-2018 11:47:31.869 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 11:47:31.904 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
+15-Mar-2018 11:57:12.377 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 11:57:12.415 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
+15-Mar-2018 12:04:22.763 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 12:04:22.790 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
+15-Mar-2018 12:13:03.330 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 12:13:03.380 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
+15-Mar-2018 12:14:13.433 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 12:14:13.456 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
+15-Mar-2018 12:16:03.543 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 12:16:03.594 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
+15-Mar-2018 12:17:03.642 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] has started
+15-Mar-2018 12:17:03.664 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/hello] is completed
