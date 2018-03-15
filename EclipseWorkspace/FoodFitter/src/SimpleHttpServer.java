@@ -1,7 +1,7 @@
 /** source:
- * 
+ *
  * http://www.rgagnon.com/javadetails/java-have-a-simple-http-server.html
- * 
+ *
  */
 
 import java.io.BufferedInputStream;
@@ -11,11 +11,26 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.Headers;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
 public class SimpleHttpServer {
 
@@ -28,7 +43,7 @@ public class SimpleHttpServer {
     server.setExecutor(null); // creates a default executor
     server.start();
   }
-  
+
   static class postHandler implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
       InputStream input = t.getRequestBody();
@@ -50,7 +65,7 @@ public class SimpleHttpServer {
       os.close();
     }
   }
-  
+
   static class JSONHandler implements HttpHandler{
     public void handle(HttpExchange t) throws IOException {
       String json = "{\"agent 1\":{\"port\":\"12345\",\"ip\":\"192.67.4.1\",\"neighbours\":{\"agent 2\":{\"port\":\"12345\",\"ip\":\"192.67.4.2\"}},\"measurements\":{\"agent 3\":{\"port\":\"12346\",\"ip\":\"192.67.4.1\"},\"power\":\"7KW\",\"voltage\":\"4.2V\"}}}";
@@ -61,26 +76,15 @@ public class SimpleHttpServer {
                 os.close();
     }
   }
-  
+
   static class GetHandler implements HttpHandler {
-    public void handle(HttpExchange t) throws IOException {
-
-      // add the required response header for a PDF file
-      Headers h = t.getResponseHeaders();
-      h.add("Content-Type", "application/json");
-
-      // a PDF (you provide your own!)
-      File file = new File ("1-rec-and-ind5.pdf");
-      byte [] bytearray  = new byte [(int)file.length()];
-      FileInputStream fis = new FileInputStream(file);
-      BufferedInputStream bis = new BufferedInputStream(fis);
-      bis.read(bytearray, 0, bytearray.length);
-
-      // ok, we are ready to send the response.
-      t.sendResponseHeaders(200, file.length());
-      OutputStream os = t.getResponseBody();
-      os.write(bytearray,0,bytearray.length);
-      os.close();
-    }
+   StringBuilder response = new StringBuilder();
+      Map <String,String>parms = SimpleHttpServer2.queryToMap(httpExchange.getRequestURI().getQuery());
+      response.append("<html><body>");
+      response.append("hello : " + parms.get("hello") + "<br/>");
+      response.append("foo : " + parms.get("foo") + "<br/>");
+      response.append("</body></html>");
+      SimpleHttpServer2.writeResponse(httpExchange, response.toString());
   }
 }
+
