@@ -34,7 +34,11 @@ public class Food {
 	}
 	
 	public double getNutr(int nutrID){
-		return nutrVals.get(nutrID);
+		try {
+			return nutrVals.get(nutrID);
+		}catch (Exception e){
+			return 0;
+		}
 	}
 	
 	public ArrayList<Integer> getNutrients() {
@@ -72,14 +76,8 @@ public class Food {
 	}
 
 	public int getCal() {
-		// TODO IMPLEMENT CALORIE RETRIEVAL
 		final int CALORIE_ID = 208;
-		try {
-			return (int)getNutr(CALORIE_ID);
-		}catch (Exception e){
-			//System.out.println("Gosh darn");
-			return 0;
-		}
+		return (int)getNutr(CALORIE_ID);
 	}
 
 }

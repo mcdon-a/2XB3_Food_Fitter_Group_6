@@ -34,6 +34,15 @@ public class Meal {
 	public Food get(int index) {
 		return foods.get(index);
 	}
+	// Merge additional meal into this meal
+	public Meal mergeMeal(Meal meal) {
+		Meal result = new Meal(foods);
+		ArrayList<Food> new_foods = meal.getFoods();
+		for(Food food: new_foods) {
+			result.add(food);
+		}
+		return result;
+	}
 	// Get foods
 	public ArrayList<Food> getFoods(){
 		return foods;
