@@ -1,5 +1,6 @@
 package Food;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -35,6 +36,13 @@ public class Food {
 	public double getNutr(int nutrID){
 		return nutrVals.get(nutrID);
 	}
+	
+	public ArrayList<Integer> getNutrients() {
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+		temp.addAll(nutrVals.keySet());
+		return temp;
+	}
+	
 	
 	//String representation 
 	public String toString() {

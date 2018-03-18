@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class NutrientInfo {
 	private static final String NUTRI_NAME_PATH = "data\\NUTRIENT NAME.csv";
 	private static final int ROW_WIDTH = 8;
-	static HashMap<Integer, NutriName> nutrient_lookup = new HashMap<Integer, NutriName>();
+	private static HashMap<Integer, NutriName> nutrient_lookup = new HashMap<Integer, NutriName>();
 	
 	public static void init_info() {
 		// Define buffered reader
