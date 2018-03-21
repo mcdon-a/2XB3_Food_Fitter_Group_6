@@ -77,14 +77,14 @@ public class SimpleHttpServer {
     }
   }
 
-  static class GetHandler implements HttpHandler {
-   StringBuilder response = new StringBuilder();
-      Map <String,String>parms = SimpleHttpServer2.queryToMap(httpExchange.getRequestURI().getQuery());
-      response.append("<html><body>");
-      response.append("hello : " + parms.get("hello") + "<br/>");
-      response.append("foo : " + parms.get("foo") + "<br/>");
-      response.append("</body></html>");
-      SimpleHttpServer2.writeResponse(httpExchange, response.toString());
-  }
+//  static class GetHandler implements HttpHandler {
+//   StringBuilder response = new StringBuilder();
+//      Map <String,String>parms = SimpleHttpServer2.queryToMap(httpExchange.getRequestURI().getQuery());
+//      response.append("<html><body>");
+//      response.append("hello : " + parms.get("hello") + "<br/>");
+//      response.append("foo : " + parms.get("foo") + "<br/>");
+//      response.append("</body></html>");
+//      SimpleHttpServer2.writeResponse(httpExchange, response.toString());
+//  }
 }
 
