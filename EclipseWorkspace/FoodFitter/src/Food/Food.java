@@ -79,5 +79,5 @@ public class Food {
 		final int CALORIE_ID = 208;
 		return (int)getNutr(CALORIE_ID);
 	}
-
+	
 }
