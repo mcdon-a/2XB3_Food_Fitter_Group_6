@@ -106,10 +106,11 @@ public class ReadCSV {
 	 */
 	public static ArrayList<Food> readFile() {
 		ArrayList<Food> foods = new ArrayList<Food>();
-
 		try {
 			BufferedReader readFood = new BufferedReader(new FileReader(FOOD_NAME_PATH));
+			System.out.println("Found food");
 			BufferedReader readNutrients = new BufferedReader(new FileReader(NUTRIENT_AMOUNT_PATH));
+			System.out.println("Found nutrients");
 			readNutrients.readLine();
 			readFood.readLine();
 			String nextNutrients = readNutrients.readLine();
