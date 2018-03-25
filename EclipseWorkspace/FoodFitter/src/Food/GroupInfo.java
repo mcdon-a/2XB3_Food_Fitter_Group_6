@@ -5,31 +5,25 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 public class GroupInfo {
-	private static final String NUTRI_NAME_PATH = "data\\NUTRIENT NAME.csv";
-	private static final int ROW_WIDTH = 8;
-	private static HashMap<Integer, NutriName> nutrient_lookup = new HashMap<Integer, NutriName>();
+	private static final String FOOD_GROUP_PATH = "data\\FOOD GROUP.csv";
+	private static final int ROW_WIDTH = 4;
+	private static HashMap<Integer, GroupName> group_lookup = new HashMap<Integer, GroupName>();
 	
 	public static void init_info() {
 		// Define buffered reader
 		BufferedReader br = null;
 		String line = "";
 		String delim = ",";
+		// Set up group parameter variables
 		int key;
-		// Set up nutrient parameter variables
-		int code;
-		String symbol;
-		String unit;
 		String name;
-		String nameF;
-		String tagname;
-		int decimals;
 		
 		try {
 			// Set up buffered reader
-			br = new BufferedReader(new FileReader(NUTRI_NAME_PATH));
+			br = new BufferedReader(new FileReader(FOOD_GROUP_PATH));
 			// Discard first row
 			br.readLine();
-			// Read Nutrient Name csv line by line
+			// Read Food Group csv line by line
 			while((line = br.readLine()) != null) {
 				// Split line by comma
 				String[] info = line.split(delim);
@@ -37,18 +31,11 @@ public class GroupInfo {
 				if (info.length != ROW_WIDTH) continue;
 				// Fill paramaters
 				key = Integer.parseInt(info[0]);
-				code = Integer.parseInt(info[1]);
-				symbol = info[2];
-				unit = info[3];
-				name = info[4];
-				nameF = info[5];
-				tagname = info[6];
-				decimals = Integer.parseInt(info[7]);
-				// Fill Nutriname object with parameters
-				NutriName nw = new NutriName(code,symbol,unit,name,
-											nameF,tagname,decimals);
+				name = info[2];
+				// Fill Groupname object with parameters
+				GroupName nw = new GroupName(key, name);
 				// Store nw in hashmap
-				nutrient_lookup.put(key, nw);
+				group_lookup.put(key, nw);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -62,14 +49,14 @@ public class GroupInfo {
             }
         }
 	}
-	public static NutriName get(int key) {
-		return nutrient_lookup.get(key);
+	public static GroupName get(int key) {
+		return group_lookup.get(key);
 	}
 	/*
 	 * Main script with example usage
 	 */
 	public static void main(String[] args) {
 		init_info();
-		System.out.println(get(211).getName());
+		System.out.println(get(12).getName());
 	}
 }

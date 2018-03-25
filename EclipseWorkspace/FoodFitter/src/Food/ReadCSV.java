@@ -18,11 +18,12 @@ public class ReadCSV {
 	/**
 	 * The filepath to the Food Name.csv file.
 	 */
-	private static final String FOOD_NAME_PATH = "data\\Food Name.csv";
+	private static final String FOOD_NAME_PATH = "data\\FOOD NAME.csv";
 	/**
 	 * The filepath to the Nutrient Amount.csv file.
 	 */
-	private static final String NUTRIENT_AMOUNT_PATH = "data\\Nutrient Amount.csv";
+	private static final String NUTRIENT_AMOUNT_PATH = "data\\NUTRIENT AMOUNT.csv";
+
 
 	/*
 	 * /** Method for resizing an array of Food.
@@ -79,6 +80,8 @@ public class ReadCSV {
 			return "-1,-1,-1, ";
 		}
 	}
+	
+	
 
 	/**
 	 * Converts the ingredients in the CSV row into an array of ingredient tags
@@ -110,16 +113,20 @@ public class ReadCSV {
 		try {
 			BufferedReader readFood = new BufferedReader(new FileReader(FOOD_NAME_PATH));
 			BufferedReader readNutrients = new BufferedReader(new FileReader(NUTRIENT_AMOUNT_PATH));
+			
 			readNutrients.readLine();
 			readFood.readLine();
 			String nextNutrients = readNutrients.readLine();
+			int foodGroupID;
 
 			for (String line = readFood.readLine(); line != null && line != ""; line = readFood.readLine()) {
 				int foodID = Integer.parseInt(line.split(",", 3)[1]);
+				foodGroupID = Integer.parseInt(line.split(",", 4)[2]);
 				String[] ingredients = ingredientsToTags(line);
 
 				foods.add(new Food(ingredients));
 				nextNutrients = addNutrients(readNutrients, nextNutrients, foods.get(foods.size() - 1), foodID);
+				foods.get(foods.size() - 1).addGroup(foodGroupID);
 			}
 			readFood.close();
 			return foods;
@@ -130,9 +137,14 @@ public class ReadCSV {
 	}
 
 	public static void main(String[] args) {
+		int food = 500;
+		int nutrient = 306;
+		GroupInfo.init_info();
+		NutrientInfo.init_info();
 		readFile();
-		System.out.println(readFile().get(5689).toString());
-		//System.out.println(readFile().get(2000).getNutr(306));
+		System.out.println(readFile().get(food).toString());
+		System.out.println(readFile().get(food).getNutr(nutrient) + " " + NutrientInfo.get(nutrient).getUnit() + " " + NutrientInfo.get(nutrient).getName());
+		System.out.println(GroupInfo.get(readFile().get(food).getGroup()).getFullName());
 	}
 
 }

@@ -2,12 +2,12 @@ package Food;
 
 public class GroupName {
 	
-	private final int id;
+	//private final int id;
 	private final String fullGroup;
 	private final String group;
 	
 	public GroupName(int groupId, String groupName){
-		id = groupId;
+		//id = groupId;
 		fullGroup = groupName;
 		switch (groupId){
 		case 2: case 9: case 11: 	group = "Vegetables and Fruit";
@@ -32,13 +32,13 @@ public class GroupName {
 		}
 	}
 	
-	public int getId() {
+	/*public int getId() {
 		return id;
-	}
-	public String getFullGroup() {
+	}*/
+	public String getFullName() {
 		return fullGroup;
 	}
-	public String getGroup() {
+	public String getName() {
 		return group;
 	}
 
