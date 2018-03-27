@@ -4,6 +4,7 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+
 public class HelloServlet extends HttpServlet {
    @Override
    public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -20,13 +21,24 @@ public class HelloServlet extends HttpServlet {
          int prot = Integer.parseInt(request.getParameter("prot"));
 
          //TODO:
+         // Load in food
+         ArrayList<Food> foods = ReadCSV.readFile();
+     	 // Build knapsack
+     	 Knapsack knap = new Knapsack(foods);
+     	 // Build NT
+     	 NutrientTarget nt = new NutrientTarget(cal);
+     	 // Fit NT with data
+     	 Meal best = Fitter.fitNutrTar(knap, nt);
+     	 // Get first food
+     	 out.println(best.get(0).getDescriptor()[0]);
+     	 
          //Here we call the knapsack algorithm on "cals"
-         String foods = "{Chicken, Lettuce}";
-         NutrientTarget nt = new NutrientTarget(cal);
-         ArrayList<Integer> f = nt.getNutrients();
-         out.println("<p>Calories required: " + request.getParameter("cal") + "</p>");
-         out.println("<p>Protein required: " + request.getParameter("prot") + "</p>");
-         out.println(nt);
+         //String foods = "{Chicken, Lettuce}";
+         //NutrientTarget nt = new NutrientTarget(cal);
+         //ArrayList<Integer> f = nt.getNutrients();
+         //out.println("<p>Calories required: " + request.getParameter("cal") + "</p>");
+         //out.println("<p>Protein required: " + request.getParameter("prot") + "</p>");
+         //out.println(nt);
          //END TODO
 
          // out.println("<html>");
