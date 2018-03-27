@@ -18,11 +18,11 @@ public class ReadCSV {
 	/**
 	 * The filepath to the Food Name.csv file.
 	 */
-	private static final String FOOD_NAME_PATH = "data\\Food Name.csv";
+	private static final String FOOD_NAME_PATH = "data/Food Name.csv";
 	/**
 	 * The filepath to the Nutrient Amount.csv file.
 	 */
-	private static final String NUTRIENT_AMOUNT_PATH = "data\\Nutrient Amount.csv";
+	private static final String NUTRIENT_AMOUNT_PATH = "data/Nutrient Amount.csv";
 
 	/*
 	 * /** Method for resizing an array of Food.

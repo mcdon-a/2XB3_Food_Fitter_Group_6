@@ -1,5 +1,8 @@
 package Food;
 import java.util.ArrayList;
+import Food.json.*;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Startup {
 
@@ -15,7 +18,11 @@ public class Startup {
     	// Build knapsack
     	Knapsack knap = new Knapsack(foods);
     	// Example Query
-    	System.out.println(knap.mealsInRange(600, 600).get(4).getFoods());
+    	Map m = new HashMap<String,ArrayList<Food>>();
+    	m.put("foods", knap.mealsInRange(600, 600).get(1).getFoods());
+    	
+    	JSONObject json = new JSONObject(m);
+    	System.out.println(json.toString());
     	
     	// Build prefix tree
     	PrefixTree tree = new PrefixTree(foods);
@@ -23,10 +30,10 @@ public class Startup {
 		// Example Query
 		Food[] search = tree.getFood("chicken");   
 		
-		TimSort.sortMerge(search, 204);
-		for(int i = 0; i < search.length;i ++) {
-			System.out.println(search[i] + "nutr val: " + search[i].getNutr(204));
-			
-		}
+//		TimSort.sortMerge(search, 204);
+//		for(int i = 0; i < search.length;i ++) {
+//			System.out.println(search[i] + "nutr val: " + search[i].getNutr(204));
+//			
+//		}
     }
 }
