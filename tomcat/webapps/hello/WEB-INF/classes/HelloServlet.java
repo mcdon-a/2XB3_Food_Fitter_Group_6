@@ -31,6 +31,8 @@ public class HelloServlet extends HttpServlet {
              this.foods = ReadCSV.readFile();
          	 // Build knapsack
          	 knap = new Knapsack(foods);
+         	 // Load in Nutrient Info
+         	 NutrientInfo.init_info();
          	 // System has now loaded
          	 loaded = true;
          }
@@ -40,8 +42,8 @@ public class HelloServlet extends HttpServlet {
      	 // Fit NT with data
      	 Meal best = Fitter.fitNutrTar(knap, nt);
      	 // Get first food (Note: this is just returning the first tag of the first food in meal for testing purposes)
-     	 out.println(best.get(0).getDescriptor()[0]);
- 
+     	 //out.println(best.get(0).getDescriptor()[0]);
+     	 out.println(NutrientInfo.get(654).getName());
      	 
          //Here we call the knapsack algorithm on "cals"
          //String foods = "{Chicken, Lettuce}";
