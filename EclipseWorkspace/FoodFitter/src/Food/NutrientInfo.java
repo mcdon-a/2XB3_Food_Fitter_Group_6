@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 public class NutrientInfo {
-	private static final String NUTRI_NAME_PATH = "data\\NUTRIENT NAME.csv";
+	private static final String NUTRI_NAME_PATH = "data/NUTRIENT NAME.csv";
 	private static final int ROW_WIDTH = 8;
 	private static HashMap<Integer, NutriName> nutrient_lookup = new HashMap<Integer, NutriName>();
 	
@@ -29,8 +29,10 @@ public class NutrientInfo {
 			br = new BufferedReader(new FileReader(NUTRI_NAME_PATH));
 			// Discard first row
 			br.readLine();
+			int count = 0;
 			// Read Nutrient Name csv line by line
 			while((line = br.readLine()) != null) {
+				count ++;
 				// Split line by comma
 				String[] info = line.split(delim);
 				// Discard improper row
@@ -47,6 +49,7 @@ public class NutrientInfo {
 				// Fill Nutriname object with parameters
 				NutriName nw = new NutriName(code,symbol,unit,name,
 											nameF,tagname,decimals);
+				System.out.println(count);
 				// Store nw in hashmap
 				nutrient_lookup.put(key, nw);
 			}

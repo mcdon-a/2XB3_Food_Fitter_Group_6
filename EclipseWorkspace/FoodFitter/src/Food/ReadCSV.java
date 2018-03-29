@@ -139,12 +139,12 @@ public class ReadCSV {
 	public static void main(String[] args) {
 		int food = 500;
 		int nutrient = 306;
-		GroupInfo.init_info();
+//		GroupInfo.init_info();
 		NutrientInfo.init_info();
 		readFile();
 		System.out.println(readFile().get(food).toString());
 		System.out.println(readFile().get(food).getNutr(nutrient) + " " + NutrientInfo.get(nutrient).getUnit() + " " + NutrientInfo.get(nutrient).getName());
-		System.out.println(GroupInfo.get(readFile().get(food).getGroup()).getFullName());
+//		System.out.println(GroupInfo.get(readFile().get(food).getGroup()).getFullName());
 	}
 
 }
