@@ -6,6 +6,9 @@ import javax.servlet.http.*;
 
 
 public class HelloServlet extends HttpServlet {
+   private static boolean loaded = false;
+   private static ArrayList<Food> foods;
+   private static Knapsack knap;
    @Override
    public void doGet(HttpServletRequest request, HttpServletResponse response)
          throws IOException, ServletException {
@@ -21,16 +24,26 @@ public class HelloServlet extends HttpServlet {
          int prot = Integer.parseInt(request.getParameter("prot"));
 
          //TODO:
-         // Load in food
-         ArrayList<Food> foods = ReadCSV.readFile();
-     	 // Build knapsack
-     	 Knapsack knap = new Knapsack(foods);
+         
+         // Load in datasets
+         if (!loaded) {
+        	// Load in food
+             this.foods = ReadCSV.readFile();
+         	 // Build knapsack
+         	 knap = new Knapsack(foods);
+         	 // Load in Nutrient Info
+         	 NutrientInfo.init_info();
+         	 // System has now loaded
+         	 loaded = true;
+         }
+         
      	 // Build NT
      	 NutrientTarget nt = new NutrientTarget(cal);
      	 // Fit NT with data
      	 Meal best = Fitter.fitNutrTar(knap, nt);
-     	 // Get first food
-     	 out.println(best.get(0).getDescriptor()[0]);
+     	 // Get first food (Note: this is just returning the first tag of the first food in meal for testing purposes)
+     	 //out.println(best.get(0).getDescriptor()[0]);
+     	 out.println(NutrientInfo.get(654).getName());
      	 
          //Here we call the knapsack algorithm on "cals"
          //String foods = "{Chicken, Lettuce}";

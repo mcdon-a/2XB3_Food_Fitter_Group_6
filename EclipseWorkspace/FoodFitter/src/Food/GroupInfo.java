@@ -6,9 +6,12 @@ import java.util.HashMap;
 
 public class GroupInfo {
 	private static final String FOOD_GROUP_PATH = "data\\FOOD GROUP.csv";
+	private static final String FOOD_GROUP_GRAPH_PATH = "data\\GROUP COMBINATIONS.txt";
 	private static final int ROW_WIDTH = 4;
+	public static final int GROUP_AMOUNT = 26;
 	private static HashMap<Integer, GroupName> group_lookup = new HashMap<Integer, GroupName>();
-	
+	public static Digraph groupGraph;
+
 	public static void init_info() {
 		// Define buffered reader
 		BufferedReader br = null;
@@ -24,11 +27,12 @@ public class GroupInfo {
 			// Discard first row
 			br.readLine();
 			// Read Food Group csv line by line
-			while((line = br.readLine()) != null) {
+			while ((line = br.readLine()) != null) {
 				// Split line by comma
 				String[] info = line.split(delim);
 				// Discard improper row
-				if (info.length != ROW_WIDTH) continue;
+				if (info.length != ROW_WIDTH)
+					continue;
 				// Fill paramaters
 				key = Integer.parseInt(info[0]);
 				name = info[2];
@@ -37,26 +41,49 @@ public class GroupInfo {
 				// Store nw in hashmap
 				group_lookup.put(key, nw);
 			}
+			br.close();
+			
+			
+			groupGraph = new Digraph();
+			// Set up buffered reader
+			br = new BufferedReader(new FileReader(FOOD_GROUP_GRAPH_PATH));
+			while ((line = br.readLine()) != null) {
+				// Split line by comma
+				String[] info = line.split(delim);
+				//1st entry of each line is itself
+				int vertex = Integer.parseInt(info[0]);
+				// Iterate through array of edges one by one
+				for (String edge : info) {
+					//edges are written down from 1 to 23 instead of 0 to 22
+					key = Integer.parseInt(edge) - 1;
+					groupGraph.addEdge(vertex, key);
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+			if (br != null) {
+				try {
+					br.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
+
 	public static GroupName get(int key) {
 		return group_lookup.get(key);
 	}
+
 	/*
 	 * Main script with example usage
 	 */
 	public static void main(String[] args) {
+		int groupChoice = 12;
 		init_info();
-		System.out.println(get(12).getName());
+		System.out.println(get(groupChoice).getName());
+		System.out.println(groupGraph.indegree[groupChoice] + " edges coming in");
+		System.out.println(groupGraph.outdegree(groupChoice) + " edges going out");
 	}
 }
