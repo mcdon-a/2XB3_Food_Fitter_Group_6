@@ -102,6 +102,7 @@ public class ConsoleApp {
 						i = inp().trim();
 						cur_name = i;
 						cur_meal = new Meal();
+						meals.put(cur_name, cur_meal);
 						state = 2;
 					} else if (i.charAt(0)=='-') {
 						int ind = Integer.parseInt(i.substring(1));
@@ -112,13 +113,17 @@ public class ConsoleApp {
 						int ind = Integer.parseInt(i);
 						cur_name = names.get(ind-1);
 						cur_meal = meals.get(cur_name);
+						if (targets.containsKey(cur_name))
+							cur_nt = targets.get(cur_name);
+						else
+							cur_nt = null;
 						state = 2;
 					}
 					break;
 				case 2: // Meal options
 					pHeader(cur_name.toUpperCase());
 					choose();
-					pOptionMany("Set nutrient targets","View meal","Save meal");
+					pOptionMany("Set nutrient targets","View meal");
 					pOption("b","Go back");
 					i = inp().trim();
 					if (e(i,"b")) {
@@ -131,12 +136,6 @@ public class ConsoleApp {
 								break;
 							case 2:
 								state = 4;
-								break;
-							case 3:
-								meals.put(cur_name, cur_meal);
-								p("Meal has been saved.");
-								p("Press ENTER to continue...");
-								waitEnter();
 								break;
 							default:
 								state = 999;
@@ -200,7 +199,8 @@ public class ConsoleApp {
 					pnl();
 					pOption("+","Add Food");
 					pOption(Arrays.asList(new String[] {"-","#"}),"Delete Food");
-					pOption("f","FoodFit");
+					if (cur_nt != null) pOption("f","FoodFit");
+					else p("- Create Nutrient Target to enable foodfitting -");
 					pOption("b", "Go back");
 					i = inp().trim();
 					
@@ -367,10 +367,10 @@ public class ConsoleApp {
 						Food[] ordered = foods.toArray(new Food[foods.size()]);
 						TimSort.sortMerge(ordered, id);
 						// Request minimum value
-						p("Enter minimum value");
+						p("Enter minimum value("+cur_nut.getUnit()+"):");
 						int mn = Integer.parseInt(inp().trim());
 						// Request maximum value
-						p("Enter maximum value");
+						p("Enter maximum value("+cur_nut.getUnit()+"):");
 						int mx = Integer.parseInt(inp().trim());
 						// Find start/end indices
 						int s = 0, e = ordered.length-1;
