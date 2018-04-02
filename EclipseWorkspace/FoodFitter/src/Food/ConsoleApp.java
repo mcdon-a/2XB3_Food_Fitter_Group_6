@@ -1,5 +1,6 @@
 package Food;
 
+import java.awt.List;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,6 +67,8 @@ public class ConsoleApp {
 	private static void FSM() {
 		String i; // for input
 		int c; // for counting
+		int pos; // position in item lists
+		final int ELE_LIMIT = 8; // max number of elements to display
 		while (state!=-1) {
 			switch(state) {
 				case 0: // Main Menu
@@ -276,7 +279,7 @@ public class ConsoleApp {
 						int j = Integer.parseInt(i);
 						if (j == 1) {
 							state = 7;
-						} else if (state == 2) {
+						} else if (j == 2) {
 							state = 8;
 						} else {
 							state = 999;
@@ -292,8 +295,7 @@ public class ConsoleApp {
 						break;
 					}
 					Food[] matches = tree.getFood(i);
-					int pos = 0;
-					final int ELE_LIMIT = 8;
+					pos = 0;
 					while (true) {
 						pHeader("Foods Found:");
 						pSubHeader("Page ("+Integer.toString(1+pos/ELE_LIMIT)+"/"+Integer.toString(1+matches.length/ELE_LIMIT)+")");
@@ -324,6 +326,92 @@ public class ConsoleApp {
 							waitEnter();
 							break;
 						}
+					}
+					break;
+				case 8: // Add by nutrient
+					while(true) { // loop until user exits
+						pHeader(cur_name.toUpperCase()+" - Add food by nutrient);");
+						pnl();
+						///   Getting possible nutrients
+						p("Enter name or prefix of target nutrient(or bb to go back): ");
+						i = inp().trim();
+						if (e(i,"bb")) {
+							state = 6;
+							break;
+						}
+						ArrayList<NutriName> options = new ArrayList<NutriName>();;
+						ArrayList<Integer> keys = NutrientInfo.getKeys();
+						for(Integer key : keys) {
+							NutriName nut_name = NutrientInfo.get(key);
+							// Check if i is prefix of name
+							if (nut_name.getName().toLowerCase().startsWith(i.toLowerCase())) {
+								options.add(nut_name);
+							}
+						}
+						///   Selecting one nutrient
+						c = 1;
+						for(NutriName nut : options) {
+							pOption(c++,nut.getName());
+						}
+						if (options.size()==0) {
+							p("No matching nutrient found");
+							p("Press ENTER to continue...");
+							waitEnter();
+							break; // Try new input if none found
+						}
+						choose();
+						i = inp().trim();
+						int k = Integer.parseInt(i);
+						NutriName cur_nut = options.get(k-1);
+						int id = cur_nut.getID();
+						Food[] ordered = foods.toArray(new Food[foods.size()]);
+						TimSort.sortMerge(ordered, id);
+						// Request minimum value
+						p("Enter minimum value");
+						int mn = Integer.parseInt(inp().trim());
+						// Request maximum value
+						p("Enter maximum value");
+						int mx = Integer.parseInt(inp().trim());
+						// Find start/end indices
+						int s = 0, e = ordered.length-1;
+						while (s < ordered.length && ordered[s].getNutr(id) < mn) s++;
+						while (e >= 0 && ordered[e].getNutr(id)>mx) e--;
+						
+						pos = s;
+						while (true) {
+							pHeader("Foods Found:");
+							pSubHeader("Page ("+Integer.toString(1+pos/ELE_LIMIT)+"/"+Integer.toString(1+(e-s+1)/ELE_LIMIT)+")");
+							
+							choose();
+							p("Amount of "+NutrientInfo.get(id).getName());
+							c = 1;
+							
+							for(int j = pos; j<pos+ELE_LIMIT && j<=e; j++) {
+								Food food = ordered[j];
+								pOption(c++, Double.toString(food.getNutr(id))+NutrientInfo.get(id).getUnit()+"\t | "+food.allDescriptors());
+							}
+							if (pos+ELE_LIMIT <= e) pOption("n", "Next page");
+							if (pos > s) pOption("p", "Prev page");
+							pOption("b", "Go back");
+							i = inp().trim();
+							if (e(i,"b")) {
+								state = 6;
+								break;
+							} else if (e(i,"n")) {
+								pos += ELE_LIMIT;
+							} else if (e(i,"p")) {
+								pos -= ELE_LIMIT;
+							} else {
+								int j = Integer.parseInt(i);
+								int ind = pos + j - 1;
+								cur_meal.add(ordered[ind]);
+								p("Food Added");
+								p("Press ENTER to continue...");
+								waitEnter();
+								break;
+							}
+						}
+						
 					}
 					break;
 				default:
