@@ -1,6 +1,7 @@
 package Food;
 
 public class NutriName {
+	private final int NutrientID;
 	private final int NutrientCode;
 	private final String NutrientSymbol;
 	private final String NutrientUnit;
@@ -10,8 +11,9 @@ public class NutriName {
 	private final int NutrientDecimals;
 	
 	
-	public NutriName(int code, String symbol, String unit, 
+	public NutriName(int ID, int code, String symbol, String unit, 
 			String name,String nameF,String tagname,int decimals){
+		NutrientID = ID;
 		NutrientCode = code;
 		NutrientSymbol = symbol;
 		NutrientUnit = unit;
@@ -20,7 +22,9 @@ public class NutriName {
 		Tagname = tagname;
 		NutrientDecimals = decimals;
 	}
-	
+	public int getID() {
+		return NutrientID;
+	}
 	public int getCode() {
 		return NutrientCode;
 	}

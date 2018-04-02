@@ -30,6 +30,17 @@ public class Food {
 		return this.descriptor;
 	}
 	
+	public String allDescriptors() {
+		StringBuilder sb = new StringBuilder();
+		if (descriptor.length > 0) {
+			sb.append(descriptor[0]);
+			for(int i = 1; i < descriptor.length; i++) {
+				sb.append(", "+descriptor[i]);
+			}
+		}
+		return sb.toString();
+	}
+	
 	public void addNutr(int nutrID, double val){
 		nutrVals.put(nutrID,val);
 	}
