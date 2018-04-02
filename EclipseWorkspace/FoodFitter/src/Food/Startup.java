@@ -40,8 +40,8 @@ public class Startup {
     	}
     	m.put("nutrients", nutrientList);
     	
-    	JSONObject json = new JSONObject(m);
-    	System.out.println(json.toString());
+    	//JSONObject json = new JSONObject(m);
+    	//System.out.println(json.toString());
     	
     	
     	// Build prefix tree
@@ -49,11 +49,12 @@ public class Startup {
     	
 		// Example Query
 		Food[] search = tree.getFood("chicken");   
+		Food[] ordered = foods.toArray(new Food[foods.size()]);
 		
-//		TimSort.sortMerge(search, 204);
-//		for(int i = 0; i < search.length;i ++) {
-//			System.out.println(search[i] + "nutr val: " + search[i].getNutr(204));
-//			
-//		}
+		TimSort.sortMerge(ordered, 203);
+		for(int i = 0; i < 10;i ++) {
+			System.out.println(ordered[i] + "nutr val: " + ordered[i].getNutr(203));
+			
+		}
     }
 }

@@ -48,7 +48,7 @@ public class NutrientInfo {
 				tagname = info[6];
 				decimals = Integer.parseInt(info[7]);
 				// Fill Nutriname object with parameters
-				NutriName nw = new NutriName(code,symbol,unit,name,
+				NutriName nw = new NutriName(key, code,symbol,unit,name,
 											nameF,tagname,decimals);
 				System.out.println(count);
 				// Store nw in hashmap
@@ -68,6 +68,9 @@ public class NutrientInfo {
 	}
 	public static NutriName get(int key) {
 		return nutrient_lookup.get(key);
+	}
+	public static ArrayList<Integer> getKeys(){
+		return new ArrayList<Integer>(nutrient_lookup.keySet());
 	}
 	/*
 	 * Main script with example usage

@@ -25,8 +25,8 @@ public class Fitter {
 			cal_include += food.getCal();
 		}
 		// Find meals matching remaining calories
-		int left_bound  = nutrTar.getCal()-search_radius;
-		int right_bound = nutrTar.getCal()+search_radius;
+		int left_bound  = nutrTar.getCal()-cal_include-search_radius;
+		int right_bound = nutrTar.getCal()-cal_include+search_radius;
 		ArrayList<Meal> meals = knap.mealsInRange(left_bound,right_bound);
 		// Merge meals with existing meal
 		for(int i = 0; i < meals.size(); i++) {

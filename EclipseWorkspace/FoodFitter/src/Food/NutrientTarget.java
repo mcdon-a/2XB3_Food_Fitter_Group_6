@@ -14,8 +14,14 @@ public class NutrientTarget {
 	public void addNutrient(int nutrID, double amt) {
 		nutrient_amounts.put(nutrID, amt);
 	}
+	public double getAmt(int nutrID) {
+		return nutrient_amounts.get(nutrID);
+	}
 	public void removeNutrient(int nutrID) {
 		nutrient_amounts.remove(nutrID);
+	}
+	public void setCal(int cals) {
+		calories = cals;
 	}
 	public int getCal() {
 		return calories;
