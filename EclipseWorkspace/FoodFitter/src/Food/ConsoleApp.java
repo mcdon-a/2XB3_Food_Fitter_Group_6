@@ -207,7 +207,7 @@ public class ConsoleApp {
 						cur_meal = Fitter.fitNutrTarFromMeal(knap, cur_nt, cur_meal);
 						// State stays the same
 					}else if (e(i,"+")) {
-						//TODO FOOD ADDING
+						state = 6;
 					} else if (i.charAt(0)=='-') {
 						int ind = Integer.parseInt(i.substring(1));
 						cur_meal.remove(ind-1);
@@ -260,6 +260,71 @@ public class ConsoleApp {
 						state = 999;
 					}
 					
+					break;
+				case 6: // food adding options
+					pHeader(cur_name.toUpperCase()+" - Add Food");
+					pnl();
+					choose();
+					pOptionMany("Add by tag",
+								"Add by nutrient");
+					pOption("b", "Go back");
+					i = inp().trim();
+					
+					if (e(i,"b")) {
+						state = 4;
+					} else {
+						int j = Integer.parseInt(i);
+						if (j == 1) {
+							state = 7;
+						} else if (state == 2) {
+							state = 8;
+						} else {
+							state = 999;
+						}
+					}
+					break;
+				case 7: // Add food by tag
+					pHeader(cur_name.toUpperCase()+" - Add food by tag");
+					pSubHeader("Enter name or prefix of tag you would like to search by(or bb to go back): ");
+					i = inp().trim();
+					if(e(i,"bb")) {
+						state = 6;
+						break;
+					}
+					Food[] matches = tree.getFood(i);
+					int pos = 0;
+					final int ELE_LIMIT = 8;
+					while (true) {
+						pHeader("Foods Found:");
+						pSubHeader("Page ("+Integer.toString(1+pos/ELE_LIMIT)+"/"+Integer.toString(1+matches.length/ELE_LIMIT)+")");
+						choose();
+						c = 1;
+						
+						for(int j = pos; j<pos+ELE_LIMIT && j<matches.length; j++) {
+							Food food = matches[j];
+							pOption(c++, Integer.toString(food.getCal())+" cal\t | "+food.allDescriptors());
+						}
+						if (pos+ELE_LIMIT < matches.length) pOption("n", "Next page");
+						if (pos > 0) pOption("p", "Prev page");
+						pOption("b", "Go back");
+						i = inp().trim();
+						if (e(i,"b")) {
+							state = 6;
+							break;
+						} else if (e(i,"n")) {
+							pos += ELE_LIMIT;
+						} else if (e(i,"p")) {
+							pos -= ELE_LIMIT;
+						} else {
+							int j = Integer.parseInt(i);
+							int ind = pos + j - 1;
+							cur_meal.add(matches[ind]);
+							p("Food Added");
+							p("Press ENTER to continue...");
+							waitEnter();
+							break;
+						}
+					}
 					break;
 				default:
 					p("Undefined Behavior");

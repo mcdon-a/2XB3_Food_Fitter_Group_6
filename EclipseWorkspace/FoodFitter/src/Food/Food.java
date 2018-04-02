@@ -100,4 +100,5 @@ public class Food {
 		return (int)getNutr(CALORIE_ID);
 	}
 	
+	
 }
