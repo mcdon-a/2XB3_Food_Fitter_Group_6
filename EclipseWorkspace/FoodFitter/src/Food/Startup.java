@@ -29,12 +29,17 @@ public class Startup {
     	
 		// Example Query
 		Food[] search = tree.getFood("chicken");   
+		
+		
 		Food[] ordered = foods.toArray(new Food[foods.size()]);
 		
+
+		
+		
 		TimSort.sortMerge(ordered, 203);
-		for(int i = 0; i < 10;i ++) {
+		for(int i = 0; i < 5000;i ++) {
 			System.out.println(ordered[i] + "nutr val: " + ordered[i].getNutr(203));
-			
 		}
+		
     }
 }
