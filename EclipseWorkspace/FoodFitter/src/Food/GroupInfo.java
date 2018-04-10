@@ -39,7 +39,6 @@ public class GroupInfo {
 				// Store nw in hashmap
 				group_lookup.put(key, nw);
 			}
-		}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
