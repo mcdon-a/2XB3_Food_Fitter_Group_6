@@ -11,19 +11,20 @@ class MainMenu extends Component{
     }
     async _promptDataAsync(){
         try{
-            let sendData = fetch('http://172.17.39.218:8000/posthandler', {
+            let sendData = fetch('https://192.168.2.19:9999/hello', {
                 method: 'POST',
                 headers: {
+                  'Accept':       'application/json',
                   'Content-Type': 'application/json',
-                },
+                }, 
                 body: JSON.stringify({
-                  name: 'Alexie',
-                  age: '19',
+                  cal : '700',
+                  prot: '19'
                 }),
-            });
-            let response = await fetch('http://172.17.39.218:8000/posthandler');
-            let reponseJson = await response.json();
-            this.setState({ fulltext: JSON.stringify(responseJson)});
+              }).then((response) => {console.log(response) }).catch((error) => console.log(error));
+            //let response = await fetch('http://192.168.2.19:9999/testPost/sayhello');
+            //let reponseJson = await response;
+            //this.setState({ fulltext: response.toString()});
 
         } catch(error){
             console.log(error);
@@ -31,9 +32,10 @@ class MainMenu extends Component{
     }
     async _fetchDataAsync() {
         try {
-          let response = await fetch('http://172.17.39.218:8000/jsonFile.json');
-          let responseJson = await response.json();
-          this.setState({fulltext: JSON.stringify(responseJson)});
+          let response = await fetch('http://172.17.23.168:9999/hello/sayhello');
+          let responseJson = await response.text();
+          console.log(responseJson);
+          this.setState({fulltext: response});
         } catch(error) {
           console.error(error);
         }
@@ -51,7 +53,6 @@ class MainMenu extends Component{
                 <View style={{height: 100, width: 300, alignSelf: 'center'}}>
                     <Button onPress={() => console.log("Wee!")}>Enter</Button>
                 </View>
-                <Text>{this.state.fulltext}</Text>
             </View>
         );
     }
