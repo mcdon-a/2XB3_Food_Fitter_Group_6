@@ -9,7 +9,6 @@ import java.util.Hashtable;
 import java.util.Map;
 import java.util.Scanner;
 
-import Food.json.JSONObject;
 
 public class ConsoleApp {
 	/// Application Variables
