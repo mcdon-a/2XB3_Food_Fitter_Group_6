@@ -6,13 +6,13 @@ public class Knapsack {
 	private ArrayList<ArrayList<Meal>> buckets;
 	private int BUCKET_SIZE = 5;
 	private int MAX_CAL;
-	
+	private final int CALORIE_LOWER_BOUND = 3000;
 	private int max_cal(ArrayList<Food> foods){
 		int mx = foods.get(0).getCal();
 		for (Food x: foods)
 			if (x.getCal() > mx)
 				mx = x.getCal();
-		return mx;
+		return Math.max(mx, CALORIE_LOWER_BOUND);
 	}
 	
 	public ArrayList<Meal> mealsInRange(int l,int r) { // inclusive

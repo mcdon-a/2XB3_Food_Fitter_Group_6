@@ -1,0 +1,2 @@
+Each line corresponds to the food groups that the current one should be combined with; current groups are assumed to be in ID order.
+5,10,11,13,15,16,17

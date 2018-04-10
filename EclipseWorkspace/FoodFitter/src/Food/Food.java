@@ -18,6 +18,7 @@ public class Food {
 	
 	private final String[] descriptor;			//stores an array of tags that describe the food
 	private HashMap<Integer, Double> nutrVals;			//stores an array of nutritional values in respective order
+	private int group;
 	
 	//constructor
 	public Food(String[] descriptor) {
@@ -27,6 +28,17 @@ public class Food {
 	
 	public String[] getDescriptor() {
 		return this.descriptor;
+	}
+	
+	public String allDescriptors() {
+		StringBuilder sb = new StringBuilder();
+		if (descriptor.length > 0) {
+			sb.append(descriptor[0]);
+			for(int i = 1; i < descriptor.length; i++) {
+				sb.append(", "+descriptor[i]);
+			}
+		}
+		return sb.toString();
 	}
 	
 	public void addNutr(int nutrID, double val){
@@ -47,6 +59,14 @@ public class Food {
 		return temp;
 	}
 	
+	public void addGroup(int groupID){
+		group = groupID;
+	}
+	
+	public int getGroup(){
+		return group;
+
+	}
 	
 	//String representation 
 	public String toString() {
@@ -79,5 +99,6 @@ public class Food {
 		final int CALORIE_ID = 208;
 		return (int)getNutr(CALORIE_ID);
 	}
+	
 	
 }

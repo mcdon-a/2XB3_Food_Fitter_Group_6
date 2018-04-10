@@ -34,6 +34,10 @@ public class Meal {
 	public Food get(int index) {
 		return foods.get(index);
 	}
+	// Remove food at index
+	public void remove(int index) {
+		foods.remove(index);
+	}
 	// Merge additional meal into this meal
 	public Meal mergeMeal(Meal meal) {
 		Meal result = new Meal(foods);
