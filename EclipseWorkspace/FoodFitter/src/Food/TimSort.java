@@ -66,7 +66,7 @@ public class TimSort {
             	a[k] = aux[j++];
             else if (j > hi)
             	a[k] = aux[i++];
-            else if ((aux[j].getNutr(nutrID)-aux[j-1].getNutr(nutrID)) <= 0)
+            else if ((aux[j].getNutr(nutrID)-aux[i].getNutr(nutrID)) <= 0)
             	a[k] = aux[j++];
             else
             	a[k] = aux[i++];

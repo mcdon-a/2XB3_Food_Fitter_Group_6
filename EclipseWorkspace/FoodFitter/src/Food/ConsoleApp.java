@@ -380,7 +380,7 @@ public class ConsoleApp {
 						pos = s;
 						while (true) {
 							pHeader("Foods Found:");
-							pSubHeader("Page ("+Integer.toString(1+pos/ELE_LIMIT)+"/"+Integer.toString(1+(e-s+1)/ELE_LIMIT)+")");
+							pSubHeader("Page ("+Integer.toString(1+(pos-s+1)/ELE_LIMIT)+"/"+Integer.toString(1+(e-s+1)/ELE_LIMIT)+")");
 							
 							choose();
 							p("Amount of "+NutrientInfo.get(id).getName());
