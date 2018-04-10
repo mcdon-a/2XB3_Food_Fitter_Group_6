@@ -17,7 +17,7 @@ const styles = {
   textStyle: {
     alignSelf: 'center',
     justifyContent: 'center',
-    color: '#7ba4d9',
+    color: '#859499',
     fontSize: 27, //27 for android
     fontWeight: '100',
     paddingTop: 10, //Issues with padding for ios. Is 10 for android
@@ -25,18 +25,17 @@ const styles = {
     alignItems: 'flex-end'
   },
   buttonStyle: {
-    flex: 1,
     backgroundColor: 'white',
     alignSelf: 'stretch',
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#7ba4d9',
+    borderColor: '#859499',
     marginLeft: 5,
     marginRight: 5,
     alignItems: 'center',
     justifyContent: 'center', 
     flexWrap: 'wrap',
-    height: 500
+    height: 50
   }
 };
 
