@@ -2,9 +2,9 @@
 * The Insertion class provides methods to perform
 * various different types of insertion sort.
 *
+* @author Sophia Tao
 * @author Robert Sedgewick
 * @author Kevin Wayne
-* @author Sophia Tao
 * @version 1.0
 * @since   2018-02-18
 */
