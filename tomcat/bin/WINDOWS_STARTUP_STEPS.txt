@@ -1,4 +1,0 @@
-SET JAVA_HOME to location of Java jdk
-[setx JAVA_HOME "YOURJDKPATH"]
-Set JRE_HOME to location of JAVA JRE
-[setx JAVA_JRE "YOURJREPATH"]
