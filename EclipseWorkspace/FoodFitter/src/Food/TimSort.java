@@ -35,14 +35,13 @@ public class TimSort {
 	 * @param lo - the lower end of the array
 	 * @param hi - the higher end of the array
 	 * @param nutrID - the ID of the nutrient value being sorted
-	 * @return the merged array.
 	 */
 	private static void sortMerge(Food[] x, Food[] aux, int nutrID, int lo, int hi) {
         if (hi <= lo) return;
         int mid = lo + (hi - lo) / 2;
-        if (mid - lo > INSERTION_CUTOFF) sortMerge(x, aux, nutrID, lo, mid); //added insertion sort
+        if (mid - lo > INSERTION_CUTOFF) sortMerge(x, aux, nutrID, lo, mid);
         else Insertion.sort(x, nutrID, x.length, lo, mid);
-        if (mid - lo > INSERTION_CUTOFF) sortMerge(x, aux, nutrID, mid + 1, hi); //added insertion sort
+        if (hi - mid > INSERTION_CUTOFF) sortMerge(x, aux, nutrID, mid + 1, hi);
         else Insertion.sort(x, nutrID, x.length, mid + 1, hi);
         merge(x, aux, nutrID, lo, mid, hi);
     }
@@ -52,9 +51,12 @@ public class TimSort {
 	 * and retains their sorted order. Algorithm referenced from
 	 * Robert Sedgewick and Kevin's Wayne's textbook, Algorithms 4th ed.
 	 * Retrieved from https://algs4.cs.princeton.edu/22mergesort/Merge.java.html
-	 * @param x - the first array to be merged
-	 * @param y - the second array to be merged
-	 * @return the merged array.
+	 * @param a - the first array to be merged
+	 * @param aux - the second array to be merged
+	 * @param nutriID -  the ID of the nutrient value being sorted
+	 * @param lo the lower extent of the array
+	 * @param mid the middle of the array
+	 * @param hi the high end of the array
 	 */
 	private static void merge(Food[] a, Food[] aux, int nutrID, int lo, int mid, int hi) {
 		// copy to aux[]
