@@ -7,20 +7,21 @@ import java.util.Map;
 
 
 /**
+ * The PrefixTree class is a data structure that allows for faster tag searches
+ * and auto completion of search results based on an partially searched string.
  * 
- * Module Interface:
- * 
- * public void insertFood(Food food)   			insert a food into the prefix tree (inserts the TAGS into the tree, not the food itself)
- * public void insertTag(Food food,String tag)	insert a tag into the prefix tree
- * public Food[] getFood(String tag)			returns a list of foods based on the word that is searched
- * 
+ * Used https://www.programcreek.com/2014/05/leetcode-implement-trie-prefix-tree-java/ 
+ * as reference for an example prefix tree implementation
  * 
  * @author Thomas Armena
  *
  */
 
 public class PrefixTree {
-	//ADT for node
+	
+	/**
+	 * Class to represent a node in a prefix tree
+	 */
 	private class Node {
 		HashMap<Character, Node> children = new HashMap<Character, Node>();
 		List<Food> foods = new ArrayList<>();
@@ -29,10 +30,17 @@ public class PrefixTree {
 		Node() {}
 		Node(char c){this.c = c;}
 		
+		/**
+		 * store food inside a node
+		 * @param food Food object to be stored into node
+		 */
 		void insertFood(Food food) {
 			this.foods.add(food);
 		}
 		
+		/**
+		 * @return an array of foods stored inside the node
+		 */
 		Food[] getFoods() {
 			Food[] get = new Food[this.foods.size()];
 			get = this.foods.toArray(get);
@@ -43,12 +51,20 @@ public class PrefixTree {
 	
 	private Node root;
 	
+	/**
+	 * Constructor for PrefixTree class
+	 * @param foods Array list of foods whose tags will be stored into the prefix tree
+	 */
 	public PrefixTree (ArrayList<Food> foods) {
 		root = new Node();
 		this.load(foods);
 	}
 	
-
+	/**
+	 * Insert a tag into the prefix tree
+	 * @param food Food that the tag comes from
+	 * @param tag String to be added to prefix tree
+	 */
 	public void insertTag(Food food,String tag) {
 		
 		tag = simplifyString(tag);
@@ -71,14 +87,21 @@ public class PrefixTree {
 		}
 	}
 	
-	
-	
+	/**
+	 * Inserts all the tags of a food into the prefix tree
+	 * @param food Food object to be inserted
+	 */
 	public void insertFood(Food food) {
 		for(int i = 0; i < food.getDescriptor().length;i++) {
 			insertTag(food,food.getDescriptor()[i]);
 		}
 	}
 	
+	/**
+	 * Search for a node inside the prefix tree
+	 * @param str String of tag to search for 
+	 * @return Node of searched string 
+	 */
 	private Node searchNode(String str) {
 		str = simplifyString(str);
 		str = str.replaceAll(" ", "");
@@ -96,78 +119,33 @@ public class PrefixTree {
 		return t;
 	}
 	
+	/**
+	 * @param tag String to search for
+	 * @return array of possible foods that the current prefix tree node contains
+	 */
 	public Food[] getFood(String tag) {		
 		if (searchNode(tag)!= null) return searchNode(tag).getFoods();
 		System.out.println("Nothing found.");
 		return this.root.getFoods();
 	}
 	
+	/**
+	 * loads an array of foods into the prefix tree
+	 * @param foods Array of foods to load into prefix tree
+	 */
 	private void load(ArrayList<Food> foods) {
 		for(int i = 0; i < foods.size();i++) this.insertFood(foods.get(i));
 	}
 	
+	/**
+	 * Simplifies strings to allow for broader search results
+	 * @param str String to simplify
+	 * @return Simplified version of the string
+	 */
 	private String simplifyString(String str) {
 		str = str.toLowerCase();
 		str = str.replaceAll(" ", "");
 		if (str.charAt(str.length()-1) == 's') str = str.substring(0, str.length() - 1);
 		return str;
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Creating a test food item
-		/*
-		String[] descriptor1 = {"sandwich", "peanut butter", "strawberry jelly" };
-		String[] descriptor2 = {"sandwich", "peanut butter", "grape jelly" };
-		String[] descriptor3 = {"sandwich", "tuna"};
-		String[] descriptor4 = {"fries", "plain"};
-		String[] descriptor5 = {"fried fish", "soy sauce" };
-		String[] descriptor6 = {"sardines", "fried" };
-		
-		Food food1 = new Food(descriptor1);
-		Food food2 = new Food(descriptor2);
-		Food food3 = new Food(descriptor3);
-		Food food4 = new Food(descriptor4);
-		Food food5 = new Food(descriptor5);
-		Food food6 = new Food(descriptor6);
-		
-		PrefixTree Tree = new PrefixTree();
-		Tree.insertFood(food1);
-		Tree.insertFood(food2);
-		Tree.insertFood(food3);
-		Tree.insertFood(food4);
-		Tree.insertFood(food5);
-		Tree.insertFood(food6);
-		
-		/*
-		//SEARCH FOR NODES BY ENTERING STRING INSIDE THE CALL TO getFood BELOW
-		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		Food[] foods = Tree.getFood("nuqd");   
-		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		
-		for(int i = 0; i < foods.length;i ++) {
-			System.out.println(foods[i]);
-		}
-		
-		
-		//Multiple tags test
-		PrefixTree Tree2 = new PrefixTree();
-		//*********************************
-		Food[] foods1 = Tree.getFood("sandwich");   //First tag
-		//*********************************
-		for(int i = 0; i < foods1.length; i ++){
-			Tree2.insertFood(foods1[i]);
-		}
-		//*********************************
-		Food[] foods2 = Tree2.getFood("grape");  //Second tag
-		//*********************************
-		for(int i = 0; i < foods2.length;i ++) {
-			System.out.println(foods2[i]);
-		}
-		*/
-		//PrefixTree Tree = new PrefixTree();
-		
-		//for(int i = 0)
-		
 	}
 }

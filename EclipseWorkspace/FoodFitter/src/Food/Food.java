@@ -20,16 +20,26 @@ public class Food {
 	private HashMap<Integer, Double> nutrVals;			//stores an array of nutritional values in respective order
 	private int group;
 	
-	//constructor
+	/**
+	 * Constructor for Food Class
+	 * @param descriptor an array of tags that represent the description of the food object
+	 * @return instance of self
+	 */
 	public Food(String[] descriptor) {
 		this.descriptor = descriptor;
 		nutrVals = new HashMap<>();
 	}
 	
+	/**
+	 * @return the array of tags that represent the description of the food
+	 */
 	public String[] getDescriptor() {
 		return this.descriptor;
 	}
 	
+	/**
+	 * @return the tags that represent the description as a single string 
+	 */
 	public String allDescriptors() {
 		StringBuilder sb = new StringBuilder();
 		if (descriptor.length > 0) {
@@ -41,10 +51,19 @@ public class Food {
 		return sb.toString();
 	}
 	
+	/**
+	 * adds nutrition value to food object
+	 * @param nutrID id of nutrition to add
+	 * @param val value of nutrition to add
+	 */
 	public void addNutr(int nutrID, double val){
 		nutrVals.put(nutrID,val);
 	}
 	
+	/**
+	 * @param nutrID id of nutrition value to get
+	 * @return the value of the nutrition with the specified id
+	 */
 	public double getNutr(int nutrID){
 		try {
 			return nutrVals.get(nutrID);
@@ -53,22 +72,34 @@ public class Food {
 		}
 	}
 	
+	/**
+	 * @return an array list of all nutrition values
+	 */
 	public ArrayList<Integer> getNutrients() {
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		temp.addAll(nutrVals.keySet());
 		return temp;
 	}
 	
+	/**
+	 * assigns a food group to the food object
+	 * @param groupID 
+	 */
 	public void addGroup(int groupID){
 		group = groupID;
 	}
 	
+	/**
+	 * @return the food group of the food object
+	 */
 	public int getGroup(){
 		return group;
 
 	}
 	
-	//String representation 
+	/**
+	 * @brief provides string representation of food object 
+	 */
 	public String toString() {
 		String descriptor = "";
 		for(int i = 0; i < this.descriptor.length; i++) {
@@ -80,21 +111,9 @@ public class Food {
 		return "(" + descriptor + ")";
 	}
 	
-	//Temporary main to test code
-	public static void main(String[] args) {
-		
-		String[] descriptor = {"Fast foods", "sandwiches and burgers", "hamburger", "regular", "single patty", "plain"};
-		Food food1 = new Food(descriptor);
-		food1.addNutr(203, 19998);
-		food1.addNutr(408, 8);
-		
-		//Testing the outputs
-		System.out.println(food1);
-		System.out.println(food1.getDescriptor()[1]);
-		System.out.println(food1.getNutr(203));
-		System.out.println(food1.getNutr(408));
-	}
-
+	/**
+	 * @return get the calorie value of the food object
+	 */
 	public int getCal() {
 		final int CALORIE_ID = 208;
 		return (int)getNutr(CALORIE_ID);
