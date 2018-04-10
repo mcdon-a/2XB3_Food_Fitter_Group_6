@@ -136,6 +136,12 @@ public class ReadCSV {
 		}
 	}
 
+
+	/**
+	 * Demonstrates an example usage of the file import
+	 *
+	 * @param args Command line input
+	 */
 	public static void main(String[] args) {
 		int food = 500;
 		int nutrient = 306;
