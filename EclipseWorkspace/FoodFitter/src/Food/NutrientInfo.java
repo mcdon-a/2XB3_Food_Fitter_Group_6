@@ -44,8 +44,10 @@ public class NutrientInfo {
 			br = new BufferedReader(new FileReader(NUTRI_NAME_PATH));
 			// Discard first row
 			br.readLine();
+			int count = 0;
 			// Read Nutrient Name csv line by line
 			while((line = br.readLine()) != null) {
+				count ++;
 				// Split line by comma
 				String[] info = line.split(delim);
 				// Discard improper row
@@ -62,6 +64,7 @@ public class NutrientInfo {
 				// Fill Nutriname object with parameters
 				NutriName nw = new NutriName(key, code,symbol,unit,name,
 											nameF,tagname,decimals);
+				System.out.println(count);
 				// Store nw in hashmap
 				nutrient_lookup.put(key, nw);
 			}

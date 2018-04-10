@@ -1,0 +1,147 @@
+27-Mar-2018 16:40:41.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.6
+27-Mar-2018 16:40:41.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 09:34:35 UTC
+27-Mar-2018 16:40:41.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.6.0
+27-Mar-2018 16:40:41.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+27-Mar-2018 16:40:41.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.12.6
+27-Mar-2018 16:40:41.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+27-Mar-2018 16:40:41.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre
+27-Mar-2018 16:40:41.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+27-Mar-2018 16:40:41.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+27-Mar-2018 16:40:41.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:40:41.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:40:41.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/conf/logging.properties
+27-Mar-2018 16:40:41.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+27-Mar-2018 16:40:41.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+27-Mar-2018 16:40:41.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+27-Mar-2018 16:40:41.635 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+27-Mar-2018 16:40:41.635 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:40:41.635 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:40:41.635 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/temp
+27-Mar-2018 16:40:41.635 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Sophia/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+27-Mar-2018 16:40:41.787 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:40:41.811 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Mar-2018 16:40:41.824 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:40:41.826 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Mar-2018 16:40:41.826 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 850 ms
+27-Mar-2018 16:40:41.866 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+27-Mar-2018 16:40:41.866 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.6
+27-Mar-2018 16:40:41.883 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs]
+27-Mar-2018 16:40:42.381 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs] has finished in [498] ms
+27-Mar-2018 16:40:42.382 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples]
+27-Mar-2018 16:40:42.791 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples] has finished in [409] ms
+27-Mar-2018 16:40:42.791 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello]
+27-Mar-2018 16:40:42.833 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello] has finished in [42] ms
+27-Mar-2018 16:40:42.833 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager]
+27-Mar-2018 16:40:42.870 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager] has finished in [36] ms
+27-Mar-2018 16:40:42.870 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager]
+27-Mar-2018 16:40:42.895 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager] has finished in [24] ms
+27-Mar-2018 16:40:42.895 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT]
+27-Mar-2018 16:40:42.914 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT] has finished in [19] ms
+27-Mar-2018 16:40:42.919 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:40:42.932 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:40:42.935 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1108 ms
+27-Mar-2018 16:44:58.956 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:44:58.963 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:44:59.017 INFO [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+27-Mar-2018 16:44:59.056 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:44:59.061 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:44:59.063 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:44:59.063 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:45:00.818 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.6
+27-Mar-2018 16:45:00.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 09:34:35 UTC
+27-Mar-2018 16:45:00.822 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.6.0
+27-Mar-2018 16:45:00.822 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+27-Mar-2018 16:45:00.822 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.12.6
+27-Mar-2018 16:45:00.822 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+27-Mar-2018 16:45:00.822 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre
+27-Mar-2018 16:45:00.824 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+27-Mar-2018 16:45:00.824 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+27-Mar-2018 16:45:00.824 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:45:00.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:45:00.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/conf/logging.properties
+27-Mar-2018 16:45:00.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+27-Mar-2018 16:45:00.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+27-Mar-2018 16:45:00.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+27-Mar-2018 16:45:00.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+27-Mar-2018 16:45:00.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:45:00.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:45:00.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/temp
+27-Mar-2018 16:45:00.827 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Sophia/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+27-Mar-2018 16:45:00.992 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:45:01.018 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Mar-2018 16:45:01.032 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:45:01.034 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Mar-2018 16:45:01.034 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 670 ms
+27-Mar-2018 16:45:01.075 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+27-Mar-2018 16:45:01.075 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.6
+27-Mar-2018 16:45:01.087 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs]
+27-Mar-2018 16:45:01.451 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs] has finished in [364] ms
+27-Mar-2018 16:45:01.451 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples]
+27-Mar-2018 16:45:01.761 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples] has finished in [310] ms
+27-Mar-2018 16:45:01.762 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello]
+27-Mar-2018 16:45:01.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello] has finished in [36] ms
+27-Mar-2018 16:45:01.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager]
+27-Mar-2018 16:45:01.829 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager] has finished in [31] ms
+27-Mar-2018 16:45:01.829 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager]
+27-Mar-2018 16:45:01.854 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager] has finished in [24] ms
+27-Mar-2018 16:45:01.854 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT]
+27-Mar-2018 16:45:01.872 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT] has finished in [17] ms
+27-Mar-2018 16:45:01.875 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:45:01.885 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:45:01.888 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 853 ms
+27-Mar-2018 16:46:43.268 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:46:43.276 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:46:43.332 INFO [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+27-Mar-2018 16:46:43.365 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:46:43.370 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:46:43.373 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:46:43.375 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:46:45.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.6
+27-Mar-2018 16:46:45.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2018 09:34:35 UTC
+27-Mar-2018 16:46:45.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.6.0
+27-Mar-2018 16:46:45.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+27-Mar-2018 16:46:45.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.12.6
+27-Mar-2018 16:46:45.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+27-Mar-2018 16:46:45.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre
+27-Mar-2018 16:46:45.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+27-Mar-2018 16:46:45.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+27-Mar-2018 16:46:45.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:46:45.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:46:45.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/conf/logging.properties
+27-Mar-2018 16:46:45.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+27-Mar-2018 16:46:45.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+27-Mar-2018 16:46:45.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+27-Mar-2018 16:46:45.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+27-Mar-2018 16:46:45.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:46:45.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat
+27-Mar-2018 16:46:45.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/year3/courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/temp
+27-Mar-2018 16:46:45.026 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Sophia/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+27-Mar-2018 16:46:45.174 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:46:45.196 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Mar-2018 16:46:45.204 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:46:45.205 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+27-Mar-2018 16:46:45.206 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 683 ms
+27-Mar-2018 16:46:45.235 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+27-Mar-2018 16:46:45.236 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.6
+27-Mar-2018 16:46:45.246 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs]
+27-Mar-2018 16:46:45.593 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/docs] has finished in [346] ms
+27-Mar-2018 16:46:45.594 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples]
+27-Mar-2018 16:46:45.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/examples] has finished in [314] ms
+27-Mar-2018 16:46:45.908 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello]
+27-Mar-2018 16:46:45.950 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/hello] has finished in [43] ms
+27-Mar-2018 16:46:45.951 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager]
+27-Mar-2018 16:46:45.997 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/host-manager] has finished in [46] ms
+27-Mar-2018 16:46:45.998 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager]
+27-Mar-2018 16:46:46.049 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/manager] has finished in [52] ms
+27-Mar-2018 16:46:46.050 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT]
+27-Mar-2018 16:46:46.073 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Year3/Courses/2xb3/project/2XB3_Food_Fitter_Group_6/tomcat/webapps/ROOT] has finished in [23] ms
+27-Mar-2018 16:46:46.078 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:46:46.095 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:46:46.098 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 892 ms
+27-Mar-2018 16:50:45.578 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:50:45.587 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:50:45.643 INFO [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+27-Mar-2018 16:50:45.675 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:50:45.679 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+27-Mar-2018 16:50:45.682 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+27-Mar-2018 16:50:45.686 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
