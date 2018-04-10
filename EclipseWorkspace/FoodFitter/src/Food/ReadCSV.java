@@ -2,7 +2,6 @@ package Food;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Class for importing CSV files from the 2015 Health Canada data on food

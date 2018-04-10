@@ -1,6 +1,5 @@
 package Food;
 
-import java.io.BufferedReader;
 import java.util.ArrayList;
 
 import Food.GroupInfo;

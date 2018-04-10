@@ -1,12 +1,8 @@
 package Food;
 
-import java.awt.List;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Map;
 import java.util.Scanner;
 
 
