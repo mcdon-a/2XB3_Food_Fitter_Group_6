@@ -19,7 +19,7 @@ public class TimSort {
 	 * Robert Sedgewick and Kevin's Wayne's textbook, Algorithms 4th ed.
 	 * Retrieved from https://algs4.cs.princeton.edu/22mergesort/Merge.java.html
 	 * @param x - the input array containing jobs that need to be sorted.
-	 * @param n - the size of the input array
+	 * @param nutrID - the ID of the nutrient to sort by
 	 */
 	public static void sortMerge ( Food[] x, int nutrID) {
 		Food[] aux = new Food[x.length];

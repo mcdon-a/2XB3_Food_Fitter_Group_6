@@ -43,9 +43,10 @@ public class Knapsack {
 	 * Gets all valid meals in the inclusive range from l to r calories
 	 * @param l Inclusive lower bound of range
 	 * @param r Inclusive upper bound of range
+	 * @param out_query range to query from when normal query is out of bounds
 	 * @return Meals in range
 	 */
-	public ArrayList<Meal> mealsInRange(int l,int r,int min_query) {
+	public ArrayList<Meal> mealsInRange(int l,int r,int out_query) {
 		// Set up ArrayList to hold result
 		ArrayList<Meal> res = new ArrayList<Meal>();
 		// Iterate through range
@@ -53,11 +54,11 @@ public class Knapsack {
 		r = Math.min(buckets.size()-1, r);
 		// Out of bounds left -> give minimum query
 		if (l == 0 && r <= l) {
-			r = min_query;
+			r = out_query;
 		}
 		// out of bounds right -> give maximal query
 		if (r == buckets.size()-1 && l >= r) {
-			l = r - min_query;
+			l = r - out_query;
 		}
 		for (int i = l; i <= r; i++) {
 			// Iterate through items in bucket

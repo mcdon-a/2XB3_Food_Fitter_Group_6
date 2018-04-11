@@ -128,6 +128,7 @@ public class NutrientInfo {
 	
 	/**
 	 * Example usage
+	 * @param args N/A
 	 */
 	public static void main(String[] args) {
 		init_info();

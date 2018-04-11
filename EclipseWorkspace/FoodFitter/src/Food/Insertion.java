@@ -18,6 +18,9 @@ public class Insertion {
 	 * Retrieved from https://algs4.cs.princeton.edu/21elementary/Insertion.java.html.
 	 * @param x - the input array containing jobs that need to be sorted.
 	 * @param n - the size of the input array
+	 * @param nutrID - the ID of the nutrient to sort by
+	 * @param lo - low inclusive index to sort from
+	 * @param hi - high inclusive index to sort to
 	 */
 	public static void sort( Food[] x, int nutrID, int n, int lo, int hi ) {
 		for (int i = lo; i <= hi; i++) {
