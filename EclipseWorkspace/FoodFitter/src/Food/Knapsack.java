@@ -1,6 +1,7 @@
 package Food;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Module to handle construction of, and interface with, Knapsack object.
@@ -121,6 +122,5 @@ public class Knapsack {
 			}
 		}
 	}
-
 
 }

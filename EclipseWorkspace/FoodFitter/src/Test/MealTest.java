@@ -1,4 +1,4 @@
-package Food;
+package Test;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import Food.Food;
+import Food.Meal;
 
 public class MealTest {
 	String[][] foodnames = {{"Cereal", "ready to eat", "Reese Puffs (Peanut butter)", "General Mills"}, {"Turkey", "all classes", "gizzard", "raw"}, {"Spices", "allspice", "ground"}, {"Peach", "canned halves or slices", "extra light syrup pack", "solids and liquid"}};

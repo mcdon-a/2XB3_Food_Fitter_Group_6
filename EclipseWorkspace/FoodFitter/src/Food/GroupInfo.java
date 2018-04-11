@@ -80,13 +80,4 @@ public class GroupInfo {
 	public static GroupName get(int key) {
 		return group_lookup.get(key);
 	}
-
-	/*
-	 * Main script with example usage
-	 */
-	public static void main(String[] args) {
-		int groupChoice = 12;
-		init_info();
-		System.out.println(get(groupChoice).getName());
-	}
 }

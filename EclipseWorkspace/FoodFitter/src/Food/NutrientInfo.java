@@ -126,16 +126,4 @@ public class NutrientInfo {
 		return res.toArray(new String[res.size()]);
 	}
 	
-	/**
-	 * Example usage
-	 * @param args N/A
-	 */
-	public static void main(String[] args) {
-		init_info();
-		System.out.println(get(211).getName());
-		System.out.println(get(205).getName());
-		System.out.println(get(208).getName());
-		System.out.println(get(203).getName());
-	}
-	
 }

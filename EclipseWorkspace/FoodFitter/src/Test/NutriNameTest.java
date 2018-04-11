@@ -1,10 +1,12 @@
-package Food;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import Food.NutriName;
 
 public class NutriNameTest {
 	NutriName nutri1 = new NutriName(203, 203, "PROT", "g", "PROTEIN", "PROTÉINES", "PROCNT", 2);

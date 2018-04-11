@@ -1,9 +1,12 @@
-package Food;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import Food.Food;
+import Food.TimSort;
 
 public class TimSortTest {
 	

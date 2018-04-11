@@ -1,10 +1,12 @@
-package Food;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import Food.Food;
 
 public class FoodTest {
 	String[] description = {"Cereal", "ready to eat", "Reese Puffs (Peanut butter)", "General Mills"};
