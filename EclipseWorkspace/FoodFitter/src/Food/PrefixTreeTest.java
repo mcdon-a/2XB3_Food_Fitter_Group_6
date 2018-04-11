@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestPrefixTree {
+public class PrefixTreeTest {
 	private PrefixTree tree;
 	private String[] desc1 = {"pizza","pineapple","large"};
 	private String[] desc2 = {"pizza","pineapple","small"};

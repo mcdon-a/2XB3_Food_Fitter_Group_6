@@ -3,6 +3,8 @@ package Food;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.junit.Before;
+
 /**
  * Contains information about goals for nutrient values as and ADT.
  * Provides an interface to support addition/deletion of nutrients,
@@ -120,4 +122,17 @@ public class NutrientTarget {
 
 		return error;
 	}
+	/*
+	public static void main(String args[]) {
+		NutrientTarget target1 = new NutrientTarget(900);
+		String[][] foodnames = {{"Cereal", "ready to eat", "Reese Puffs (Peanut butter)", "General Mills"}, {"Turkey", "all classes", "gizzard", "raw"}, {"Spices", "allspice", "ground"}, {"Peach", "canned halves or slices", "extra light syrup pack", "solids and liquid"}};
+		Food[] food = {new Food(foodnames[0]), new Food(foodnames[1]), new Food(foodnames[2]), new Food(foodnames[3])};
+		Meal meal1 = new Meal(food[0]);
+		target1.addNutrient(203,35.22);
+		target1.addNutrient(204, 28.66);
+		meal1.add(food[1]);
+		meal1.add(food[2]);
+		meal1.add(food[3]);
+		System.out.println(target1.sqrdErr(meal1));
+}*/
 }

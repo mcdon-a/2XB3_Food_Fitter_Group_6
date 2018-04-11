@@ -133,6 +133,9 @@ public class NutrientInfo {
 	public static void main(String[] args) {
 		init_info();
 		System.out.println(get(211).getName());
+		System.out.println(get(205).getName());
+		System.out.println(get(208).getName());
+		System.out.println(get(203).getName());
 	}
 	
 }
