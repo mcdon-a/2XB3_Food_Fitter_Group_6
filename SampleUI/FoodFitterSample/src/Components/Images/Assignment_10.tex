@@ -1,0 +1,158 @@
+\documentclass[11pt,fleqn]{article}
+
+\setlength {\topmargin} {-.15in}
+\setlength {\textheight} {8.6in}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows}
+\usepackage{diagbox}
+%\usepackage{ulem}
+\usepackage{stackrel}
+
+\renewcommand{\labelenumii}{\theenumii.}
+
+\newcommand{\mname}[1]{\mbox{\sf #1}}
+\newcommand{\pnote}[1]{{\langle \text{#1} \rangle}}
+\newcommand{\set}[1]{{\{ #1 \}}}
+\newcommand{\sB}{\mbox{$\cal B$}}
+\newcommand{\sC}{\mbox{$\cal C$}}
+\newcommand{\sF}{\mbox{$\cal F$}}
+\newcommand{\sH}{\mbox{$\cal H$}}
+\newcommand{\sM}{\mbox{$\cal M$}}
+\newcommand{\sP}{\mbox{$\cal P$}}
+\newcommand{\sV}{\mbox{$\cal V$}}
+\newcommand{\TRUE}{\mbox{{\sc t}}}
+\newcommand{\FALSE}{\mbox{{\sc f}}}
+\newcommand{\Neg}{\neg}
+\newcommand{\Implies}{\Rightarrow}
+\renewcommand{\And}{\wedge}
+\newcommand{\Or}{\vee}
+\newcommand{\ForallApp}{\forall\,}
+\newcommand{\ForsomeApp}{\exists\,}
+\newcommand{\mdot}{\mathrel\bullet}
+\newcommand{\der}[2]{\stackrel[#2]{#1}{\longrightarrow}}
+
+\begin{document}
+
+\begin{center}
+
+  {\large \textbf{COMPSCI/SFWRENG 2FA3}}\\[2mm]
+  {\large \textbf{Discrete Mathematics with Applications II}}\\[2mm]
+  {\large \textbf{Winter 2018}}\\[8mm]
+  {\huge \textbf{Assignment 10}}\\[6mm]
+  {\large \textbf{Dr.~William M. Farmer}}\\[2mm]
+  {\large \textbf{McMaster University}}\\[6mm]
+  {\large Revised: March 25, 2018}
+
+\end{center}
+
+\medskip
+
+Assignment 10 consists of two required problems and one optional bonus
+problem.  You are required to write your solutions using LaTeX.
+
+Submit the following files to the Assignment 10 folder on Avenue under
+Assessments/Assignments:
+
+\begin{enumerate}
+
+  \item A file named \texttt{Assignment\_10\_\emph{YourMacID}.tex} that
+    is a copy of the LaTeX source file for this assignment
+    (\texttt{Assignment\_10.tex}) with your solutions entered after
+    each problem.  \texttt{\emph{YourMacID}} must be your personal
+    MacID.
+
+  \item A file named \texttt{Assignment\_10\_\emph{YourMacID}.pdf} that
+    is the PDF output produced by executing
+
+    \begin{itemize}
+
+      \item[] \texttt{pdflatex Assignment\_10\_\emph{YourMacID}}
+
+    \end{itemize}
+
+  \item Any additional files that are needed to produce the PDF
+    output.  These should be given names that begin with
+    \texttt{Assignment\_10\_\emph{YourMacID}\_}\ .
+
+\end{enumerate}
+
+\noindent
+This assignment is due \textbf{Sunday, April 1, 2018 before midnight.}
+You must write your name and MacID at the bottom of the LaTeX file.
+You are allowed to submit the assignment multiple times, but only the
+last submission will be marked.  \textbf{Late submissions and files
+  that are not named exactly as specified above or are missing your
+  name or MacID will not be accepted!}
+
+\textbf{Although you are allowed to receive help from the
+  instructional staff and other students, your submitted program must
+  be your own work.  Copying will be treated as academic dishonesty!}
+
+\newpage
+
+\subsection*{Required Problems}
+
+\begin{enumerate}
+
+  \item \textbf{[10 points]} Construct a regular grammar that
+    generates the language matched by the regular expression $(000^* +
+    111^*)^*$.
+
+  \bigskip
+
+   A possible regular grammar that generates the language matched by the above expression is denoted by G:\\
+  
+   G = (\{S, A, B, C, D, E, F \}, \{0, 1\}, P, S)\\
+   Where P is the set of productions below 
+    $S \Rightarrow  A | B | \epsilon \\
+    A  \Rightarrow 0C \\
+    B \Rightarrow 1D \\
+    C  \Rightarrow 0E \\
+    E \Rightarrow 0E | \epsilon | S \\
+    D \Rightarrow 1F \\
+    F  \Rightarrow 1F | \epsilon | S$
+
+  \bigskip
+
+  \item \textbf{[10 points]} Let $\Sigma = \set{a,b}$ and $L = \set{x
+    \in \Sigma^* \mid x \not= \mname{rev}\ x}$.  Construct a simple
+    grammar for $L$ as well as grammars in Chomsky and Greibach normal
+    form for $L$.
+
+  \bigskip
+
+  \textbf{Put your three grammars here.}  
+
+\end{enumerate}
+
+\subsection*{Bonus Problem}
+
+\begin{itemize}
+
+  \item[] \textbf{[5 bonus points]} Prove that, if a CFG $G$ is right
+    linear, then $L(G)$ is regular.
+
+  \bigskip
+
+  \textbf{Put your proof here.} 
+
+\end{itemize}
+
+\subsection*{Name and MacID}
+
+\medskip
+
+Name: \textbf{Alexie McDonald}
+
+\bigskip
+
+\noindent
+MacID: \textbf{mcdona16}
+
+\end{document}
+
+
