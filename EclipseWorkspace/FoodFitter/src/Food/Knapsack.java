@@ -45,10 +45,20 @@ public class Knapsack {
 	 * @param r Inclusive upper bound of range
 	 * @return Meals in range
 	 */
-	public ArrayList<Meal> mealsInRange(int l,int r) {
+	public ArrayList<Meal> mealsInRange(int l,int r,int min_query) {
 		// Set up ArrayList to hold result
 		ArrayList<Meal> res = new ArrayList<Meal>();
 		// Iterate through range
+		l = Math.max(0, l);
+		r = Math.min(buckets.size()-1, r);
+		// Out of bounds left -> give minimum query
+		if (l == 0 && r <= l) {
+			r = min_query;
+		}
+		// out of bounds right -> give maximal query
+		if (r == buckets.size()-1 && l >= r) {
+			l = r - min_query;
+		}
 		for (int i = l; i <= r; i++) {
 			// Iterate through items in bucket
 			for (int j = 0; j < buckets.get(i).size(); j++) {

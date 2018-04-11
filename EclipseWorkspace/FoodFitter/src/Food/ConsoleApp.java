@@ -74,6 +74,7 @@ public class ConsoleApp {
 		Food f3 = new Food(new String[] {"Eggs","White","farm-sourced"});
 		f1.addNutr(208, 153);f2.addNutr(208, 232);f3.addNutr(208, 461);
 		m1.add(f1);m1.add(f2);m1.add(f3);
+		NutrientTarget nt1 = new NutrientTarget(846);
 		// Build second sample meal
 		Meal m2 = new Meal();
 		Food f4 = new Food(new String[] {"Asparagus", "Polish", "Vegetable"});
@@ -81,9 +82,16 @@ public class ConsoleApp {
 		Food f6 = new Food(new String[] {"Potatoes", "Vegetable", "Starch"});
 		f4.addNutr(208, 134);f5.addNutr(208, 578);f6.addNutr(208, 307);
 		m2.add(f4);m2.add(f5);m2.add(f6);
+		NutrientTarget nt2 = new NutrientTarget(1019);
+		// Set up names
+		String name1 = "My favorite brunch";
+		String name2 = "Fancy dinner";
 		// Insert sample meals
-		meals.put("My favorite brunch", m1);
-		meals.put("Fancy dinner", m2);
+		meals.put(name1, m1);
+		meals.put(name2, m2);
+		// Insert nutrient targets
+		targets.put(name1, nt1);
+		targets.put(name2, nt2);
 	}
 	
 	/**

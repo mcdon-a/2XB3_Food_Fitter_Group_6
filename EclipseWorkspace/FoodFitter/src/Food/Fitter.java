@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Fitter {
 	/// Radius to search in
-	private final static int search_radius = 10;
+	private final static int search_radius = 100;
 	/*
 	 * Return meal with minimal squared error
 	 */
@@ -25,7 +25,7 @@ public class Fitter {
 	public static Meal fitNutrTar(Knapsack knap, NutrientTarget nutrTar) {
 		int left_bound  = nutrTar.getCal()-search_radius;
 		int right_bound = nutrTar.getCal()+search_radius;
-		ArrayList<Meal> meals = knap.mealsInRange(left_bound,right_bound);
+		ArrayList<Meal> meals = knap.mealsInRange(left_bound,right_bound,search_radius);
 		return bestMealForTar(meals, nutrTar);
 	}
 	
@@ -45,12 +45,14 @@ public class Fitter {
 		// Find meals matching remaining calories
 		int left_bound  = nutrTar.getCal()-cal_include-search_radius;
 		int right_bound = nutrTar.getCal()-cal_include+search_radius;
-		ArrayList<Meal> meals = knap.mealsInRange(left_bound,right_bound);
+		ArrayList<Meal> meals = knap.mealsInRange(left_bound,right_bound,search_radius);
 		// Merge meals with existing meal
 		for(int i = 0; i < meals.size(); i++) {
 			Meal temp = meals.get(i);
 			meals.set(i, temp.mergeMeal(include));
 		}
+		// Add old existing meal
+		meals.add(include.copy());
 		// Find optimal meal
 		return bestMealForTar(meals, nutrTar);
 	}
