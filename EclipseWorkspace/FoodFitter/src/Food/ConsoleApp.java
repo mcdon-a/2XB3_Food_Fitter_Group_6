@@ -588,7 +588,9 @@ public class ConsoleApp {
 	 * @return
 	 */
 	private static String inp() {
-		return scan.nextLine();
+		String res = "";
+		while (e(res.trim(),"")) res = scan.nextLine();
+		return res;
 	}
 	
 	/**
